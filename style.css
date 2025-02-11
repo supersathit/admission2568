@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 .body{
-    background-color: skyblue;
+    background-color: rgb(182, 222, 255);
 }
 .header{
     position:sticky;
