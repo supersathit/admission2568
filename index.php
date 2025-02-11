@@ -67,7 +67,7 @@
           <div class="card shadow rounded-4 p-3">
             <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร</h4>
             <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
-            <form action="" method="get" class="p-2 bg-light">
+            <form action="" method="get" class="p-3 bg-light">
               <div class="input-group">
                 <input type="text" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
