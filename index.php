@@ -13,58 +13,49 @@
     <?php include('components/header.php'); ?>
     <div class="container mb-4">
 
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        </div>
-        <div class="carousel-inner rounded-4">
-          <div class="carousel-item active">
-            <img src="img/header2.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/header2.png" class="d-block w-100" alt="...">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-      <div class="dark">
+      <div class="dark mb-5">
         <marquee>ยินดีต้อนรับเข้าสู่ระบบรับนักเรียน โรงเรียนวัชรวิทยา ปีการศึกษา 2568 มีข้อสงสัยติดต่อได้ที่ <span class="text-danger"> งานรับนักเรียน กลุ่มบริหารงานวิชาการ เบอร์โทร 062-408-4011</span></marquee>
       </div>
       
-      <h4 class="text-center text-secondary my-5"><i class="fa-solid fa-house"></i> home</h4>
+      <div class="row justify-content-center mb-3">
+        <div class="col-3 col-lg-1">
+          <img src="img/logo โรงเรยีน.png" width="100%">
+        </div>
+        <h3 class="text-center fw-bold">
+          ระบบรับนักเรียนออนไลน์ <br>
+          ปีการศึกษา 2568 <br>
+          โรงเรียนวัชรวิทยา
+        </h3>
+        <p class="text-center">93 ถนนเทศบาล 2 ตำบลในเมือง อำเภอเมืองกำแพงเพชร จังหวัดกำแพงเพชร 62000 <br>โทรศัพท์ 055 711 901</p>
+      </div>
 
-      <div class="row">
+      <div class="row justify-content-center mb-5">
 
         <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
-          <div class="card shadow rounded-4 overflow-hidden">
-            <div class="card-img1">
+          <div class="card shadow rounded-4">
+            <!-- <div class="card-img1">
               <img src="img/pre school.png" width="100%" style="transition: 0.4s;">
-            </div>
-            <h4 class="fw-bold mt-2 ms-2 me-2">ประกาศรับสมัคร</h4>
-            <p class="ms-2 me-2">ประกาศรับสมัครนักเรียนเข้าศึกษาต่อ ประจำปีการศึกษา 2568 โรงเรียนวัชรวิทยา</p>
-            <a href="detail.php" class="btn btn-lg btn-success m-2"><i class="fa-solid fa-eye"></i> คลิกดูรายละเอียด</a>
+            </div> -->
+            <h4 class="fw-bold mt-2 text-center">ชั้นมัธยมศึกษาปีที่ 1</h4>
+            <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
+            <button type="button" class="btn btn-lg btn-success m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1
+            </button>
+            <!-- <a href="detail.php" class="btn btn-lg btn-success m-2"><i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1</a> -->
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
-          <div class="card shadow rounded-4 overflow-hidden">
-            <div class="card-img1">
+          <div class="card shadow rounded-4">
+            <!-- <div class="card-img1">
               <img src="img/register.png" width="100%" style="transition: 0.4s;">
-            </div>
-            <h4 class="fw-bold mt-2 ms-2 me-2">สมัคร</h4>
-            <p class="ms-2 me-2">กรอกข้อมูล สมัครโครงการวัชรวิทยา Pre m.1 ประจำปีการศึกษา 2568</p>
+            </div> -->
+            <h4 class="fw-bold mt-2 text-center">ชั้นมัธยมศึกษาปีที่ 4</h4>
+            <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
             <!-- <a href="" class="btn btn-warning m-2"><i class="fa-solid fa-address-card"></i> กรอกข้อมูลสมัคร</a> -->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-lg btn-warning m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              <i class="fa-solid fa-address-card"></i> กรอกข้อมูลสมัคร
+            <button type="button" class="btn btn-lg btn-info m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 4
             </button>
 
             <!-- Modal check-->
@@ -88,6 +79,42 @@
           </div>
         </div>
 
+        <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+          <div class="card shadow rounded-4 p-3">
+            <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร</h4>
+            <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
+            <form action="" method="get" class="p-2 bg-light">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <button class="btn btn-warning" type="submit" id="button-addon1">Button</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner rounded-4 shadow">
+          <div class="carousel-item active">
+            <img src="img/header2.png" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/header2.png" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
 
       <!-- chart -->
