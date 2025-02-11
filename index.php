@@ -22,8 +22,8 @@
           <img src="img/logo โรงเรยีน.png" width="100%">
         </div>
         <h3 class="text-center fw-bold">
-          ระบบรับนักเรียนออนไลน์ <br>
-          ปีการศึกษา 2568 <br>
+          ระบบรับนักเรียนออนไลน์<br>
+          ปีการศึกษา 2568<br>
           โรงเรียนวัชรวิทยา
         </h3>
         <p id="regis" class="text-center">93 ถนนเทศบาล 2 ตำบลในเมือง อำเภอเมืองกำแพงเพชร จังหวัดกำแพงเพชร 62000 <br>โทรศัพท์ 055 711 901</p>
@@ -63,7 +63,7 @@
 
       </div>
       <div class="row justify-content-center mb-5">
-        <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
           <div class="card shadow rounded-4 p-3">
             <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร</h4>
             <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
