@@ -18,7 +18,7 @@
       </div>
       
       <div class="row justify-content-center mb-3">
-        <div class="col-3 col-lg-1">
+        <div class="col-3 col-md-2 col-lg-1">
           <img src="img/logo โรงเรยีน.png" width="100%">
         </div>
         <h3 class="text-center fw-bold">
@@ -26,19 +26,19 @@
           ปีการศึกษา 2568 <br>
           โรงเรียนวัชรวิทยา
         </h3>
-        <p class="text-center">93 ถนนเทศบาล 2 ตำบลในเมือง อำเภอเมืองกำแพงเพชร จังหวัดกำแพงเพชร 62000 <br>โทรศัพท์ 055 711 901</p>
+        <p id="regis" class="text-center">93 ถนนเทศบาล 2 ตำบลในเมือง อำเภอเมืองกำแพงเพชร จังหวัดกำแพงเพชร 62000 <br>โทรศัพท์ 055 711 901</p>
       </div>
 
-      <div class="row justify-content-center mb-5">
+      <div class="row justify-content-center mb-3">
 
         <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
-          <div class="card shadow rounded-4">
+          <div class="card shadow rounded-4 p-2">
             <!-- <div class="card-img1">
               <img src="img/pre school.png" width="100%" style="transition: 0.4s;">
             </div> -->
             <h4 class="fw-bold mt-2 text-center">ชั้นมัธยมศึกษาปีที่ 1</h4>
             <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
-            <button type="button" class="btn btn-lg btn-success m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdropM1">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1
             </button>
             <!-- <a href="detail.php" class="btn btn-lg btn-success m-2"><i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1</a> -->
@@ -46,7 +46,7 @@
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
-          <div class="card shadow rounded-4">
+          <div class="card shadow rounded-4 p-2">
             <!-- <div class="card-img1">
               <img src="img/register.png" width="100%" style="transition: 0.4s;">
             </div> -->
@@ -54,44 +54,27 @@
             <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
             <!-- <a href="" class="btn btn-warning m-2"><i class="fa-solid fa-address-card"></i> กรอกข้อมูลสมัคร</a> -->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-lg btn-info m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button id="status" type="button" class="btn btn-lg btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdropM4">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 4
             </button>
 
-            <!-- Modal check-->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header bg-warning">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">ตรวจสอบเลขบัตรประจำตัวประชาชน</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <span class="text-danger">หมดเวลารับสมัครแล้ว</span>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ตกลง</button>
-                    <!-- <button type="submit" class="btn btn-warning">ตกลง</button> -->
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
+      </div>
+      <div class="row justify-content-center mb-5">
         <div class="col-lg-6 col-md-12 col-sm-12 col-12 mb-3">
           <div class="card shadow rounded-4 p-3">
             <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร</h4>
             <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
             <form action="" method="get" class="p-2 bg-light">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                <button class="btn btn-warning" type="submit" id="button-addon1">Button</button>
+                <input type="text" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
               </div>
             </form>
           </div>
         </div>
-
       </div>
 
       <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="true">
@@ -118,7 +101,7 @@
       </div>
 
       <!-- chart -->
-      <div class="bg-light card rounded-3 shadow p-3">
+      <div id="stat" class="bg-light card rounded-3 shadow p-3">
         <canvas id="myChart"></canvas>
       </div>
 
@@ -146,6 +129,9 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal -->
+     <?php include('components/modal.php'); ?>
 
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
