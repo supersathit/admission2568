@@ -32,7 +32,7 @@
             <form action="regis_m4.php" method="post">
             <div class="modal-body">
                 <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
-                <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก">
+                <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-success">ตกลง</button>
@@ -77,7 +77,7 @@
             <form action="regis_m1.php" method="post">
             <div class="modal-body">
                 <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
-                <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก">
+                <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-success">ตกลง</button>

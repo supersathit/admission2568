@@ -124,6 +124,7 @@
     display: none;
     width: 100%;
     box-shadow: 0 0 15px #0004;
+    z-index: 100;
 
     ul{
         list-style-type: none;

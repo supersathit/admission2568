@@ -7,7 +7,7 @@
         header('location:index.php');
     }
 
-    $sql = "SELECT * FROM regis_m1 WHERE code_id = $code_id";
+    $sql = "SELECT * FROM regis_m4 WHERE code_id = $code_id";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
 
@@ -59,12 +59,6 @@
                             <strong>เบอร์โทร : </strong><?=$row['tel']?><br>
                             <strong>วันเดือนปีเกิด(ค.ศ.) : </strong><?=$row['bdate']?><br>
                             <strong>ทีอยู่ : </strong>บ้านเลขที่ <?=$row['home_id']?> หมู่ <?=$row['home_group']?> ซอย <?=$row['alley']?> ถนน <?=$row['street']?> ตำบล <?=$row['sub_district']?> อำเภอ <?=$row['district']?> จังหวัด <?=$row['province']?> รหัสไปรษณีย์ <?=$row['post_code']?><br>
-                            <div class="mt-3"><strong>แผนการเรียน</strong></div>
-                            <div class="ps-3">
-                                1. <?php if($row['class1'] == 'esmat'){echo "ห้องเรียนพิเศษโครงการ E-SMAT";}else if($row['class1'] == 'ep'){echo "ห้องเรียนพิเศษโครงการสองภาษา (English Program)";}else{echo "ห้องเรียนพิเศษโครงการห้องเรียน สสวท.";} ?><br>
-                                2. <?php if($row['class2'] == 'esmat'){echo "ห้องเรียนพิเศษโครงการ E-SMAT";}else if($row['class2'] == 'ep'){echo "ห้องเรียนพิเศษโครงการสองภาษา (English Program)";}else{echo "ห้องเรียนพิเศษโครงการห้องเรียน สสวท.";} ?><br>
-                                3. <?php if($row['class3'] == 'esmat'){echo "ห้องเรียนพิเศษโครงการ E-SMAT";}else if($row['class3'] == 'ep'){echo "ห้องเรียนพิเศษโครงการสองภาษา (English Program)";}else{echo "ห้องเรียนพิเศษโครงการห้องเรียน สสวท.";} ?>
-                            </div>
                             <div class="p-3 rounded-3 bg-light">
                                 <table class="table table-bordered table-hover">
                                     <thead class="text-center table-info">

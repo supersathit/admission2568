@@ -69,7 +69,7 @@
             <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
             <form action="status_m1.php" method="get" class="p-3 bg-light">
               <div class="input-group">
-                <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" OnKeyPress="return chkNumber(this)" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
               </div>
             </form>
@@ -83,7 +83,7 @@
             <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
             <form action="status_m4.php" method="get" class="p-3 bg-light">
               <div class="input-group">
-                <input type="text" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" OnKeyPress="return chkNumber(this)" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
               </div>
             </form>
@@ -121,11 +121,7 @@
 
 
     </div>
-    <div class="container-fuid footer">
-      <div class="bg-warning text-center p-3">
-        <p>Copyright ©2025 โรงเรียนวัชรวิทยา. All rights reserved. Design by <a href="">sathit</a></p>
-      </div>
-    </div>
+    <?php include 'components/footer.php';?>
 
     <?php include('components/menu-bottom.php'); ?>
 
@@ -150,6 +146,14 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script language="JavaScript">
+      function chkNumber(ele)
+      {
+      var vchar = String.fromCharCode(event.keyCode);
+      if ((vchar<'0' || vchar>'9') && (vchar != '.')) return false;
+      ele.onKeyPress=vchar;
+      }
+    </script>
     <script type="text/javascript">
 
       const ctx = document.getElementById('myChart');
