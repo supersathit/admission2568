@@ -57,7 +57,11 @@
             $grade2_tmp_name =  $_FILES['grade_file2']['tmp_name'];
             $grade2_locate_img ="file/grade2/";
             $grade2_type = strrchr($_FILES['grade_file2']['name'],".");
-            $grade2_name_file =  $code_id.$grade1_type;
+            if($grade2_tmp_name == ''){
+                $grade2_name_file = " ";
+            }else{
+                $grade2_name_file =  $code_id.$grade2_type;
+            }
             move_uploaded_file($grade2_tmp_name,$grade2_locate_img.$grade2_name_file);
         }else{
             $grade2_name_file = "";

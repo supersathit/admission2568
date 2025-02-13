@@ -54,11 +54,16 @@
             $grade2_tmp_name =  $_FILES['grade_file2']['tmp_name'];
             $grade2_locate_img ="file/grade2/";
             $grade2_type = strrchr($_FILES['grade_file2']['name'],".");
-            $grade2_name_file =  $code_id.$grade1_type;
+            if($grade2_tmp_name == ''){
+                $grade2_name_file = " ";
+            }else{
+                $grade2_name_file =  $code_id.$grade2_type;
+            }
             move_uploaded_file($grade2_tmp_name,$grade2_locate_img.$grade2_name_file);
         }else{
             $grade2_name_file = "";
         }
+
 
         $sql = "INSERT INTO `regis_m4` (`code_id`, `title`, `name`, `surname`, `school_name`, `school_district`, `school_province`, `grade`, `spacial`, `bdate`, `station_bdate`, `blood`, `home_id`, `home_group`, `alley`, `street`, `sub_district`, `district`, `province`, `post_code`, `tel`, `father_name`, `father_surname`, `father_occupation`, `father_tel`, `mother_name`, `mother_surname`, `mother_occupation`, `mother_tel`, `house_regis`, `grade_file1`, `grade_file2`, `status`) 
         VALUES ('$code_id', '$title', '$name', '$surname', '$school_name', '$school_district', '$school_province', '$grade', '$spacial', '$bdate', '$station_bdate', '$blood', '$home_id', '$home_group', '$alley', '$street', '$sub_district', '$district', '$province', '$post_code', '$tel', '$father_name', '$father_surname', '$father_occupation', '$father_tel', '$mother_name', '$mother_surname', '$mother_occupation', '$mother_tel', '$house_name_file', '$grade1_name_file', '$grade2_name_file', '$status');";
