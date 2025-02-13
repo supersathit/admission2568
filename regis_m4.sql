@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Feb 12, 2025 at 05:57 PM
--- Server version: 8.0.35
--- PHP Version: 8.2.20
+-- Host: 127.0.0.1
+-- Generation Time: Feb 13, 2025 at 03:40 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `admisstion`
+-- Database: `admission`
 --
 
 -- --------------------------------------------------------
@@ -28,35 +28,40 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `regis_m4` (
-  `thai_id` varchar(13) COLLATE utf8mb4_general_ci NOT NULL,
-  `title` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `surname` varchar(70) COLLATE utf8mb4_general_ci NOT NULL,
-  `school_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `school_distrit` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `school_province` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `grade` varchar(5) COLLATE utf8mb4_general_ci NOT NULL,
-  `spacial` varchar(70) COLLATE utf8mb4_general_ci NOT NULL,
-  `bdate` date NOT NULL,
-  `station_bdate` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `blood` varchar(2) COLLATE utf8mb4_general_ci NOT NULL,
-  `home_id` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-  `home_group` varchar(9) COLLATE utf8mb4_general_ci NOT NULL,
-  `alley` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
-  `street` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `sub_district` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `district` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `province` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `post_code` int NOT NULL,
-  `tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-  `father_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `father_surname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `father_occupation` varchar(70) COLLATE utf8mb4_general_ci NOT NULL,
-  `father_tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
-  `mother_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `mother_surname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `mother_occupation` varchar(70) COLLATE utf8mb4_general_ci NOT NULL,
-  `mother_tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL
+  `thai_id` varchar(13) NOT NULL COMMENT 'เลขบัตรประชาชน',
+  `title` varchar(10) NOT NULL COMMENT 'คำนำหน้า',
+  `name` varchar(50) NOT NULL COMMENT 'ชื่อ',
+  `surname` varchar(70) NOT NULL COMMENT 'นามสกุล',
+  `school_name` varchar(50) NOT NULL COMMENT 'โรงเรียน',
+  `school_distrit` varchar(50) NOT NULL COMMENT 'อำเภอ',
+  `school_province` varchar(50) NOT NULL COMMENT 'จังหวัด',
+  `grade` varchar(5) NOT NULL COMMENT 'ผลการเรียน',
+  `spacial` varchar(70) NOT NULL COMMENT 'ความสามารถพิเศษ',
+  `bdate` date NOT NULL COMMENT 'วันเดือนปีเกิด',
+  `station_bdate` varchar(30) NOT NULL COMMENT 'สถานที่เกิด',
+  `blood` varchar(2) NOT NULL COMMENT 'หมู่เลือด',
+  `home_id` varchar(10) NOT NULL COMMENT 'บ้านเลขที่',
+  `home_group` varchar(9) NOT NULL COMMENT 'หมู่',
+  `alley` varchar(20) NOT NULL COMMENT 'ซอย',
+  `street` varchar(30) NOT NULL COMMENT 'ถนน',
+  `sub_district` varchar(30) NOT NULL COMMENT 'ตำบล',
+  `district` varchar(30) NOT NULL COMMENT 'อำเภอ',
+  `province` varchar(30) NOT NULL COMMENT 'จังหวัด',
+  `post_code` int(11) NOT NULL COMMENT 'รหัสไปรษณีย์',
+  `tel` varchar(10) NOT NULL COMMENT 'เบอร์โทร',
+  `father_name` varchar(30) NOT NULL COMMENT 'ชื่อบิดา',
+  `father_surname` varchar(30) NOT NULL COMMENT 'นามสกุลบิดา',
+  `father_occupation` varchar(70) NOT NULL COMMENT 'อาชีพบิดา',
+  `father_tel` varchar(10) NOT NULL COMMENT 'เบอร์โทรบิดา',
+  `mother_name` varchar(30) NOT NULL COMMENT 'ชื่อมารดา',
+  `mother_surname` varchar(30) NOT NULL COMMENT 'นามสกุลมารดา',
+  `mother_occupation` varchar(70) NOT NULL COMMENT 'อาชีพมารดา',
+  `mother_tel` varchar(10) NOT NULL COMMENT 'เบอร์โทรมารดา',
+  `date_regis` timestamp NOT NULL DEFAULT current_timestamp(),
+  `date_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `house_regis` varchar(30) NOT NULL,
+  `grade_file1` varchar(30) NOT NULL,
+  `grade_file2` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
