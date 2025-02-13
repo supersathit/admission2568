@@ -3,6 +3,9 @@
     include "dblink.php";
 
     $code_id = $_POST['code_id'];
+    if(!$code_id){
+        header('location:index.php');
+    }
 
     $sql = "SELECT code_id FROM regis_m1 WHERE code_id = $code_id";
     $result = mysqli_query($conn,$sql);
@@ -47,8 +50,13 @@
                         โรงเรียนวัชรวิทยา  จังหวัดกำแพงเพชร  สำนักงานเขตพื้นที่การศึกษามัธยมศึกษากำแพงเพชร
 
                     </div>
+                    
                     <hr>
+                    <div class="text-danger mb-3">
+                        <strong>คำชี้แจง: </strong>หากช่องไหนไม่มีข้อมูลให้ใส่เครื่องหมาย " - "
+                    </div>
                     <form action="php_insert_regis.php" method="post"  class="needs-validation" novalidate>
+
                         <strong>1. ประวัติส่วนตัว</strong>
                         <div class="row p-3">
                             <div class="col-12 mb-3">
@@ -172,7 +180,7 @@
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="zip_code" class="form-label">รหัสไปรษณีย์</label>
-                                <input type="text" name="sub_district" id="zip_code" class="form-control" required>
+                                <input type="text" name="sub_district" id="zip_code" class="form-control" maxlength="5" required>
                                 <div class="invalid-feedback">*กรุณากรอกรหัสไปรษณีย์</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
@@ -233,7 +241,7 @@
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom01" class="form-label">ลำดับที่ 1</label>
                                 <select name="name_title" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="" selected disabled>--เลือกแผนการเรียน1--</option>
                                     <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
                                     <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
                                     <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
@@ -245,7 +253,7 @@
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom01" class="form-label">ลำดับที่ 2</label>
                                 <select name="name_title" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="" selected disabled>--เลือกแผนการเรียน2--</option>
                                     <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
                                     <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
                                     <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
@@ -257,7 +265,7 @@
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom01" class="form-label">ลำดับที่ 3</label>
                                 <select name="name_title" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="" selected disabled>--เลือกแผนการเรียน3--</option>
                                     <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
                                     <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
                                     <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
@@ -270,22 +278,25 @@
                             <div class="my-3">
                                 <strong>4. อัปโหลดเอกสาร</strong>
                             </div>
+                            <div class="text-danger mb-3">
+                                **ให้อัพโหลดเป็นไฟล์รูปภาพเท่านั้น เช่น .jpg .png .jpeg**
+                            </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom01" class="form-label">สำเนาทะเบียนบ้านนักเรียน</label>
-                                <input type="file" name="" id="" class="form-control">
+                                <input type="file" name="" id="" class="form-control" accept="image/*" required>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom01" class="form-label">เอกสารแสดงผลการเรียนหน้า1</label>
-                                <input type="file" name="" id="" class="form-control">
+                                <input type="file" name="" id="" class="form-control" accept="image/*" required>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom01" class="form-label">เอกสารแสดงผลการเรียนหน้า2 (ถ้ามี)</label>
-                                <input type="file" name="" id="" class="form-control">
+                                <input type="file" name="" id="" class="form-control" accept="image/*">
                             </div>
 
                             <hr>
                             <div class="mt-3 text-center">
-                                <a href="index.html" class="btn btn-warning"><i class="fa-solid fa-house"></i> กลับหน้าแรก</a>
+                                <a href="index.php" class="btn btn-warning"><i class="fa-solid fa-house"></i> กลับหน้าแรก</a>
                                 <button type="submit" class="btn btn-success"><i class="fa-solid fa-paper-plane"></i> ส่งข้อมูลสมัคร</button>
                             </div>
                         </div>
