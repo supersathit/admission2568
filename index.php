@@ -170,13 +170,13 @@
           ],
           datasets: [{
             label: 'ห้องเรียนพิเศษ ม.1',
-            data: [12, 19, 3, 5, 2],
+            data: [0, 0, 0, 0, 0],
             borderWidth: 1,
             borderColor: 'rgb(235, 54, 196)',
             backgroundColor: 'rgba(235, 54, 160, 0.2)'
           },{
             label: 'ห้องเรียนพิเศษ ม.4',
-            data : [5,6,8,7,3],
+            data : [0, 0, 0, 0, 0],
             borderWidth: 1,
             borderColor: 'rgb(54, 162, 235)',
             backgroundColor: 'rgba(54, 162, 235, 0.2)'
