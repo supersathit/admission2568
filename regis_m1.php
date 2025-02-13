@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/icon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body class="body">
     <?php include('components/header.php'); ?>
@@ -75,64 +76,213 @@
                                 <input type="text" name="surname" id="validationCustom03" class="form-control" placeholder="กรอกนามสกุล" required>
                                 <div class="invalid-feedback">*กรุณากรอกนามสกุล</div>
                             </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom04" class="form-label">วันเดือนปีเกิด ค.ศ.</label>
-                                <input type="date" name="bdate" id="validationCustom04" class="form-control" required>
-                                <div class="invalid-feedback">*กรุณากรอกวันเดือนปีเกิด</div>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom05" class="form-label">สัญชาติ</label>
-                                <input type="text" name="nationality" id="validationCustom05" class="form-control" placeholder="กรอกสัญชาติ" required>
-                                <div class="invalid-feedback">*กรุณากรอกสัญชาติ</div>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom06" class="form-label">ศาสนา</label>
-                                <input type="text" name="religion" id="validationCustom06" class="form-control" placeholder="กรอกศาสนา" required>
-                                <div class="invalid-feedback">*กรุณากรอกศาสนา</div>
-                            </div>
-                            <div class="my-3">
-                                <strong>2. ประวัติการศึกษา</strong>
-                            </div>
                             <div class="col-12 mb-3">
                                 <label for="validationCustom07" class="form-label">กำลังศึกษาอยู่ในระดับชั้นประถมศึกษาปีที่ 6 โรงเรียน</label>
                                 <input type="text" name="school" id="validationCustom07" class="form-control" placeholder="กรอกชื่อโรงเรียน" required>
                                 <div class="invalid-feedback">*กรุณากรอกชื่อโรงเรียน</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom08" class="form-label">ตำบล</label>
-                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกตำบลที่อยู่โรงเรียน" required>
-                                <div class="invalid-feedback">*กรุณากรอกตำบลที่อยู่ของโรงเรียน</div>
+                                <label for="validationCustom05" class="form-label">อำเภอ</label>
+                                <input type="text" name="nationality" id="validationCustom05" class="form-control" placeholder="กรอกอำเภอที่ตั้งโรงเรียน" required>
+                                <div class="invalid-feedback">*กรุณากรอกอำเภอที่ตั้งโรงเรียน</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom09" class="form-label">อำเภอ</label>
-                                <input type="text" name="district" id="validationCustom09" class="form-control" placeholder="กรอกอำเภอที่อยู่โรงเรียน" required>
-                                <div class="invalid-feedback">*กรุณากรอกอำเภอที่อยู่ของโรงเรียน</div>
+                                <label for="validationCustom06" class="form-label">จังหวัด</label>
+                                <input type="text" name="religion" id="validationCustom06" class="form-control" placeholder="กรอกจังหวัดที่ตั้งโรงเรียน" required>
+                                <div class="invalid-feedback">*กรุณากรอกจังหวัดที่ตั้งโรงเรียน</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom10" class="form-label">จังหวัด</label>
-                                <input type="text" name="province" id="validationCustom10" class="form-control" placeholder="กรอกจังหวัดที่อยู่โรงเรียน" required>
-                                <div class="invalid-feedback">*กรุณากรอกจังหวัดที่อยู่ของโรงเรียน</div>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom11" class="form-label">รหัสไปรษณีย์</label>
-                                <input type="text" name="p_code" id="validationCustom11" class="form-control" maxlength="5" placeholder="กรอกรหัสไปรษณีย์" required>
-                                <div class="invalid-feedback">*กรุณากรอกรหัสไปรษณีย์</div>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom012" class="form-label">เบอร์โทรโรงเรียน</label>
-                                <input type="text" name="s_tel" id="validationCustom012" class="form-control" maxlength="10" placeholder="กรอกเบอร์โทรโรงเรียน" required>
-                                <div class="invalid-feedback">*กรุณากรอกเบอร์โทรโรงเรียน</div>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom13" class="form-label">เบอร์มือถือนักเรียน</label>
-                                <input type="text" name="tel" id="validationCustom13" class="form-control" maxlength="10" placeholder="กรอกเบอร์มือถือนักเรียน" required>
-                                <div class="invalid-feedback">*กรุณากรอกเบอร์มือถือนักเรียน</div>
-                            </div>
-                            <div class="col-12 mb-3">
-                                <label for="validationCustom14" class="form-label">ผลการเรียนเฉลี่ยรวม ชั้นประถมศึกษาปีที่ 4 และชั้นประถมศึกษาปีที่ 5 เท่ากับ</label>
-                                <input type="text" name="grade" id="validationCustom14" class="form-control" placeholder="ผลการเรียนเฉลี่ย" required>
+                                <label for="validationCustom06" class="form-label">ผลการเรียนเฉลี่ย ป.4 และ ป.5</label>
+                                <input type="text" name="religion" id="validationCustom06" class="form-control" placeholder="กรอกผลการเรียนเฉลี่ย ป.4 และ ป.5" required>
                                 <div class="invalid-feedback">*กรุณากรอกผลการเรียนเฉลี่ย</div>
                             </div>
+                            <div class="col-12 mb-3 col-lg-4">
+                                <label for="validationCustom04" class="form-label">วันเดือนปีเกิด ค.ศ.</label>
+                                <input type="date" name="bdate" id="validationCustom04" class="form-control" required>
+                                <div class="invalid-feedback">*กรุณากรอกวันเดือนปีเกิด</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-5">
+                                <label for="validationCustom06" class="form-label">สถานที่เกิด</label>
+                                <input type="text" name="religion" id="validationCustom06" class="form-control" placeholder="กรอกสถานที่เกิด" required>
+                                <div class="invalid-feedback">*กรุณากรอกสถานที่เกิด</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom01" class="form-label">หมู่เลือด</label>
+                                <select name="name_title" id="validationCustom01" class="form-select" required>
+                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="AB">AB</option>
+                                    <option value="O">O</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    *กรุณาเลือกหมู่เลือด
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">บ้านเลขที่</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกบ้านเลขที่" required>
+                                <div class="invalid-feedback">*กรุณากรอกบ้านเลขที่</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">หมู่</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกหมู่" required>
+                                <div class="invalid-feedback">*กรุณากรอกหมู่</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">ซอย</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกซอย" required>
+                                <div class="invalid-feedback">*กรุณากรอกซอย</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">ถนน</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกถนน" required>
+                                <div class="invalid-feedback">*กรุณากรอกถนน</div>
+                            </div>
+                            <?php
+                                include 'dblink.php';
+                                $sql_provinces = "SELECT * FROM provinces";
+                                $query = mysqli_query($conn, $sql_provinces);
+                            ?>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="provinces" class="form-label">จังหวัด</label>
+                                <select name="name_title" id="provinces" class="form-select" required>
+                                    <option value="" selected disabled>-กรุณาเลือกจังหวัด-</option>
+                                    <?php foreach ($query as $value) { ?>
+                                    <option value="<?=$value['id']?>"><?=$value['name_th']?></option>
+                                    <?php } ?>
+                                </select>
+                                <div class="invalid-feedback">
+                                    *กรุณาเลือกจังหวัด
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="amphures" class="form-label">อำเภอ</label>
+                                <select name="name_title" id="amphures" class="form-select" required>
+
+                                </select>
+                                <div class="invalid-feedback">*กรุณากรอกอำเภอ</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="districts" class="form-label">ตำบล</label>
+                                <select name="name_title" id="districts" class="form-select" required>
+
+                                </select>
+                                <div class="invalid-feedback">*กรุณากรอกตำบล</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="zip_code" class="form-label">รหัสไปรษณีย์</label>
+                                <input type="text" name="sub_district" id="zip_code" class="form-control" required>
+                                <div class="invalid-feedback">*กรุณากรอกรหัสไปรษณีย์</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">เบอร์โทรศัพท์</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" maxlength="10" placeholder="กรอกเบอร์โทรศัพท์" required>
+                                <div class="invalid-feedback">*กรุณากรอกเบอร์โทรศัพท์</div>
+                            </div>
+                            
+                            <div class="my-3">
+                                <strong>2. ข้อมูลบิดา มารดา</strong>
+                            </div>
+                            
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">ชื่อบิดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกชื่อบิดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกชื่อบิดา</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">นามสกุลบิดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกนามสกุลบิดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกนามสกุลบิดา</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">อาชีพบิดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกอาชีพบิดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกอาชีพบิดา</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">เบอร์โทรบิดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรบิดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกเบอร์โทรบิดา</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">ชื่อมารดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกชื่อมารดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกชื่อมารดา</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">นามสกุลมารดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกนามสกุลมารดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกนามสกุลมารดา</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">อาชีพมารดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" class="form-control" placeholder="กรอกอาชีพมารดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกอาชีพมารดา</div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-3">
+                                <label for="validationCustom08" class="form-label">เบอร์โทรมารดา</label>
+                                <input type="text" name="sub_district" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรมารดา" required>
+                                <div class="invalid-feedback">*กรุณากรอกเบอร์โทรมารดา</div>
+                            </div>
+                            
+
+                            <div class="my-3">
+                                <strong>3. เลือกแผนการเรียน</strong>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-4">
+                                <label for="validationCustom01" class="form-label">ลำดับที่ 1</label>
+                                <select name="name_title" id="validationCustom01" class="form-select" required>
+                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
+                                    <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
+                                    <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    *กรุณาเลือกแผนการเรียนลำดับที่ 1
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-4">
+                                <label for="validationCustom01" class="form-label">ลำดับที่ 2</label>
+                                <select name="name_title" id="validationCustom01" class="form-select" required>
+                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
+                                    <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
+                                    <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    *กรุณาเลือกแผนการเรียนลำดับที่ 2
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-4">
+                                <label for="validationCustom01" class="form-label">ลำดับที่ 3</label>
+                                <select name="name_title" id="validationCustom01" class="form-select" required>
+                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
+                                    <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
+                                    <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    *กรุณาเลือกแผนการเรียนลำดับที่ 3
+                                </div>
+                            </div>
+
+                            <div class="my-3">
+                                <strong>4. อัปโหลดเอกสาร</strong>
+                            </div>
+                            <div class="col-12 mb-3 col-lg-4">
+                                <label for="validationCustom01" class="form-label">สำเนาทะเบียนบ้านนักเรียน</label>
+                                <input type="file" name="" id="" class="form-control">
+                            </div>
+                            <div class="col-12 mb-3 col-lg-4">
+                                <label for="validationCustom01" class="form-label">เอกสารแสดงผลการเรียนหน้า1</label>
+                                <input type="file" name="" id="" class="form-control">
+                            </div>
+                            <div class="col-12 mb-3 col-lg-4">
+                                <label for="validationCustom01" class="form-label">เอกสารแสดงผลการเรียนหน้า2 (ถ้ามี)</label>
+                                <input type="file" name="" id="" class="form-control">
+                            </div>
+
                             <hr>
                             <div class="mt-3 text-center">
                                 <a href="index.html" class="btn btn-warning"><i class="fa-solid fa-house"></i> กลับหน้าแรก</a>
@@ -185,3 +335,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php include('script.php');?>
