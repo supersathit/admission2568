@@ -237,7 +237,7 @@
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">เบอร์โทรมารดา</label>
-                                <input type="text" name="mather_tel" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรมารดา" required>
+                                <input type="text" name="mother_tel" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรมารดา" required>
                                 <div class="invalid-feedback">*กรุณากรอกเบอร์โทรมารดา</div>
                             </div>
                             
