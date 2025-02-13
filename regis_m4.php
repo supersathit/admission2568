@@ -45,8 +45,8 @@
                         <img src="img/logo โรงเรยีน.png" width="80px">
                     </div>
                     <div class="fw-bold text-center">
-                        สมัครเข้าศึกษาต่อชั้นมัธยมศึกษาปีที่ 1 <br>
-                        ประเภทห้องเรียนพิเศษ ประจำปีการศึกษา 2568 <br>
+                        สมัครเข้าศึกษาต่อชั้นมัธยมศึกษาปีที่ 4 ปีการศึกษา 2568<br>
+                        ประเภทห้องเรียนพิเศษ โครงการพัฒนาอัจฉริยภาพทางภาษาอังกฤษ วิทยาศาสตร์ คณิตศาสตร์ และเทคโนโลยี (E-SMAT)<br>
                         โรงเรียนวัชรวิทยา  จังหวัดกำแพงเพชร  สำนักงานเขตพื้นที่การศึกษามัธยมศึกษากำแพงเพชร
 
                     </div>
@@ -69,6 +69,8 @@
                                     <option value="" selected disabled>--เลือก--</option>
                                     <option value="เด็กชาย">เด็กชาย</option>
                                     <option value="เด็กหญิง">เด็กหญิง</option>
+                                    <option value="นาย">นาย</option>
+                                    <option value="นางสาว">นางสาว</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     *กรุณาเลือกคำนำหน้า
@@ -85,7 +87,7 @@
                                 <div class="invalid-feedback">*กรุณากรอกนามสกุล</div>
                             </div>
                             <div class="col-12 mb-3">
-                                <label for="validationCustom07" class="form-label">กำลังศึกษาอยู่ในระดับชั้นประถมศึกษาปีที่ 6 โรงเรียน</label>
+                                <label for="validationCustom07" class="form-label">กำลังศึกษาอยู่ในระดับชั้นมัธยมศึกษาปีที่ 3 โรงเรียน</label>
                                 <input type="text" name="school_name" id="validationCustom07" class="form-control" placeholder="กรอกชื่อโรงเรียน" required>
                                 <div class="invalid-feedback">*กรุณากรอกชื่อโรงเรียน</div>
                             </div>
@@ -100,8 +102,8 @@
                                 <div class="invalid-feedback">*กรุณากรอกจังหวัดที่ตั้งโรงเรียน</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom06" class="form-label">ผลการเรียนเฉลี่ย ป.4 และ ป.5</label>
-                                <input type="text" name="grade" id="validationCustom06" class="form-control" placeholder="กรอกผลการเรียนเฉลี่ย ป.4 และ ป.5" required>
+                                <label for="validationCustom06" class="form-label">ผลการเรียนเฉลี่ย 5 ภาคเรียน</label>
+                                <input type="text" name="grade" id="validationCustom06" class="form-control" placeholder="กรอกผลการเรียนเฉลี่ย" required>
                                 <div class="invalid-feedback">*กรุณากรอกผลการเรียนเฉลี่ย</div>
                             </div>
                             <div class="col-12 mb-3">
@@ -188,7 +190,7 @@
                                 <input type="text" name="post_code" id="zip_code" class="form-control" maxlength="5" required>
                                 <div class="invalid-feedback">*กรุณากรอกรหัสไปรษณีย์</div>
                             </div>
-                            <div class="col-12 mb-3 col-lg-3">
+                            <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom08" class="form-label">เบอร์โทรศัพท์</label>
                                 <input type="text" name="tel" id="validationCustom08" class="form-control" maxlength="10" placeholder="กรอกเบอร์โทรศัพท์" required>
                                 <div class="invalid-feedback">*กรุณากรอกเบอร์โทรศัพท์</div>
@@ -241,47 +243,7 @@
                             
 
                             <div class="my-3">
-                                <strong>3. เลือกแผนการเรียน</strong>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom01" class="form-label">ลำดับที่ 1</label>
-                                <select name="class1" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือกแผนการเรียน1--</option>
-                                    <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
-                                    <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
-                                    <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    *กรุณาเลือกแผนการเรียนลำดับที่ 1
-                                </div>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom01" class="form-label">ลำดับที่ 2</label>
-                                <select name="class2" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือกแผนการเรียน2--</option>
-                                    <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
-                                    <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
-                                    <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    *กรุณาเลือกแผนการเรียนลำดับที่ 2
-                                </div>
-                            </div>
-                            <div class="col-12 mb-3 col-lg-4">
-                                <label for="validationCustom01" class="form-label">ลำดับที่ 3</label>
-                                <select name="class3" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือกแผนการเรียน3--</option>
-                                    <option value="esmat">ห้องเรียนพิเศษโครงการ E-SMAT</option>
-                                    <option value="สสวท">ห้องเรียนพิเศษโครงการห้องเรียน สสวท.</option>
-                                    <option value="ep">ห้องเรียนพิเศษโครงการสองภาษา (English Program)</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    *กรุณาเลือกแผนการเรียนลำดับที่ 3
-                                </div>
-                            </div>
-
-                            <div class="my-3">
-                                <strong>4. อัปโหลดเอกสาร</strong>
+                                <strong>3. อัปโหลดเอกสาร</strong>
                             </div>
                             <div class="text-danger mb-3">
                                 **ให้อัพโหลดเป็นไฟล์รูปภาพเท่านั้น เช่น .jpg .png .jpeg**
@@ -334,6 +296,7 @@
             }, false)
         })
         })()
+
       
     </script>
 
