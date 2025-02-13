@@ -103,27 +103,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>
 </html>
-
-<?php
-
-    $code = @$_POST['code-id'];
-    if(isset($_FILES['slip'])){
-        $code = $_POST['code-id'];
-        $tmp_name =  $_FILES['slip']['tmp_name'];
-        $locate_img ="file/slip/";
-        $type = strrchr($_FILES['slip']['name'],".");
-        $name_file =  $code.$type;
-        move_uploaded_file($tmp_name,$locate_img.$name_file);
-
-
-
-        $upload_slip = mysqli_query($conn,"UPDATE register SET slip = '$name_file' WHERE code_id = $code");
-
-        if(isset($upload_slip)){
-            echo "<script>alert('อัปโหลดหลักฐานการโอนเงินเรียบร้อย');</script>";
-            echo "<script>window.location.href='status.php?code-id=".$code."'</script>";
-        }
-    }
-
-    mysqli_close($conn);
-?>

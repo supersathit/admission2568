@@ -62,12 +62,26 @@
         </div>
 
       </div>
+      <div class="row justify-content-center mb-2">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
+          <div class="card shadow rounded-4 p-3">
+            <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร ม.1</h4>
+            <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
+            <form action="status_m1.php" method="get" class="p-3 bg-light">
+              <div class="input-group">
+                <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
       <div class="row justify-content-center mb-5">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
           <div class="card shadow rounded-4 p-3">
-            <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร</h4>
+            <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร ม.4</h4>
             <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
-            <form action="" method="get" class="p-3 bg-light">
+            <form action="status_m4.php" method="get" class="p-3 bg-light">
               <div class="input-group">
                 <input type="text" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>

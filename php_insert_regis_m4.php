@@ -17,9 +17,9 @@
     $home_group = $_POST['home_group'];
     $alley = $_POST['alley'];
     $street = $_POST['street'];
-    $sub_district = $_POST['sub_district'];
-    $district = $_POST['district'];
-    $province = $_POST['province'];
+    $sub_dis = $_POST['sub_district'];
+    $dis = $_POST['district'];
+    $pro = $_POST['province'];
     $post_code = $_POST['post_code'];
     $tel = $_POST['tel'];
     $father_name = $_POST['father_name'];
@@ -31,6 +31,13 @@
     $mother_occupation = $_POST['mother_occupation'];
     $mother_tel = $_POST['mother_tel'];
     $status = "รอตรวจสอบเอกสาร";
+
+    $province_name = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM provinces WHERE id= '$pro'"));
+    $district_name = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM amphures WHERE id= '$dis'"));
+    $sub_district_name = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM districts WHERE id= '$sub_dis'"));
+    $province = $province_name['name_th'];
+    $district = $district_name['name_th'];
+    $sub_district = $sub_district_name['name_th'];
     
 
     $sql_chk_id = "SELECT code_id FROM regis_m4 WHERE code_id = $code_id";
