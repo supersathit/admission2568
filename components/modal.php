@@ -74,13 +74,13 @@
                 <h1 class="modal-title fs-5" id="staticModalToggle2M1">ชั้นมัธยมศึกษาปีที่ 1</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="post">
+            <form action="regis_m1.php" method="post">
             <div class="modal-body">
                 <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
-                <input type="text" name="" id="" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก">
+                <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">ตกลง</button>
+                <button type="submit" class="btn btn-success">ตกลง</button>
             </div>
             </form>
         </div>
