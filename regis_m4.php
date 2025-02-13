@@ -7,7 +7,7 @@
         header('location:index.php');
     }
 
-    $sql = "SELECT code_id FROM regis_m1 WHERE code_id = $code_id";
+    $sql = "SELECT code_id FROM regis_m4 WHERE code_id = $code_id";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
 
@@ -55,7 +55,7 @@
                     <div class="text-danger mb-3">
                         <strong>คำชี้แจง: </strong>หากช่องไหนไม่มีข้อมูลให้ใส่เครื่องหมาย " - "
                     </div>
-                    <form action="php_insert_regis.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <form action="php_insert_regis_m4.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
                         <strong>1. ประวัติส่วนตัว</strong>
                         <div class="row p-3">
