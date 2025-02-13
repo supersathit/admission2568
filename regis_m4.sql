@@ -66,7 +66,7 @@ CREATE TABLE `regis_m4` (
 --
 -- Indexes for table `regis_m1`
 --
-ALTER TABLE `regis_m1`
+ALTER TABLE `regis_m4`
   ADD PRIMARY KEY (`thai_id`);
 COMMIT;
 
