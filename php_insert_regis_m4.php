@@ -62,7 +62,7 @@
             $grade2_locate_img ="file/grade2/";
             $grade2_type = strrchr($_FILES['grade_file2']['name'],".");
             if($grade2_tmp_name == ''){
-                $grade2_name_file = " ";
+                $grade2_name_file = null;
             }else{
                 $grade2_name_file =  $code_id.$grade2_type;
             }

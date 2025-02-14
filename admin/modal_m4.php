@@ -1,4 +1,4 @@
-<!-- Modal home_id M1-->
+<!-- Modal home_id M4-->
 <div class="modal fade" id="ModalHome<?=$value['code_id']?>" tabindex="-1" aria-labelledby="exampleModalHome<?=$value['code_id']?>" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<!-- Modal grade1 M1-->
+<!-- Modal grade1 M4-->
 <div class="modal fade" id="ModalGrade1<?=$value['code_id']?>" tabindex="-1" aria-labelledby="exampleModalGrade1<?=$value['code_id']?>" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -27,7 +27,7 @@
     </div>
   </div>
 </div>
-<!-- Modal grade2 M1-->
+<!-- Modal grade2 M4-->
 <div class="modal fade" id="ModalGrade2<?=$value['code_id']?>" tabindex="-1" aria-labelledby="exampleModalModalGrade2<?=$value['code_id']?>" aria-hidden="true">
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -42,7 +42,7 @@
   </div>
 </div>
 
-<!-- Modal EditStatus M1-->
+<!-- Modal EditStatus M4-->
 <div class="modal fade" id="ModalEditStatus<?=$value['code_id']?>" tabindex="-1" aria-labelledby="exampleModalModalEditStatus<?=$value['code_id']?>" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -50,7 +50,7 @@
         <h1 class="modal-title fs-5" id="exampleModalModalEditStatus<?=$value['code_id']?>">เปลี่ยนสถานะการสมัครของ <span class="text-success"><?=$value['title'].$value['name'].' '.$value['surname']?></span></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="edit_status_m1.php" method="post">
+      <form action="edit_status_m4.php" method="post">
         <div class="modal-body">
             <div class="text-center d-flex justify-content-center py-2">
                 <input type="text" name="code_id" value="<?=$value['code_id']?>" style="display: none;">

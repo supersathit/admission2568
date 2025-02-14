@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
-    <div class="display">
+    <div class="display mb-5">
         <div class="menu-left">
             <div class="text-center mb-5">
                 <img src="../img/logo โรงเรยีน.png" width="70%">
@@ -82,6 +82,12 @@
             <div class="container-fuid p-4">
                 <h3 class="text-secondary"><i class="fa-solid fa-flask"></i> ห้องเรียนพิเศษ ม.1</h3>
                 <hr class="mb-4">
+                <div class="p-1 mb-3">
+                    <button type="button" class="btn btn-primary">ทั้งหมด</button>
+                    <button type="button" class="btn btn-info">E-SMAT</button>
+                    <button type="button" class="btn btn-warning">สสวท.</button>
+                    <button type="button" class="btn btn-success">EP</button>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
                         <thead class="text-center table-primary">
@@ -143,7 +149,7 @@
             </div>
         </div>
     </div>
-
+    <?php include('menu-bottom.php'); ?>
     
     
 

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
-    <div class="display">
+    <div class="display mb-5">
         <div class="menu-left">
             <div class="text-center mb-5">
                 <img src="../img/logo โรงเรยีน.png" width="70%">
@@ -122,94 +122,96 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-6 col-12 mb-3">
                         <!-- chart -->
                         <div id="stat" class="bg-light card rounded-3 shadow p-3">
                             <canvas id="myChart"></canvas>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12">
+                    <div class="col-lg-6 col-12 mb-3">
                         <div class="card rounded-3 p-2 shadow">
-                            <table class="table table-bordered table-hover table-striped">
-                                <thead class="text-center table-primary">
-                                    <tr>
-                                        <th rowspan="2">วันที่</th>
-                                        <th colspan="3">มัธยมศึกษาปีที่ 1</th>
-                                        <th colspan="3">มัธยมศึกษาปีที่ 4</th>
-                                    </tr>
-                                    <tr>
-                                        <th>ในเขต</th>
-                                        <th>นอกเขต</th>
-                                        <th>รวม</th>
-                                        <th>ในเขต</th>
-                                        <th>นอกเขต</th>
-                                        <th>รวม</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                    <tr>
-                                        <td>15 ก.พ. 68</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>16 ก.พ. 68</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>17 ก.พ. 68</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>18 ก.พ. 68</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>19 ก.พ. 68</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr class="fw-bold">
-                                        <td>รวม</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead class="text-center table-primary">
+                                        <tr>
+                                            <th rowspan="2">วันที่</th>
+                                            <th colspan="3">มัธยมศึกษาปีที่ 1</th>
+                                            <th colspan="3">มัธยมศึกษาปีที่ 4</th>
+                                        </tr>
+                                        <tr>
+                                            <th>ในเขต</th>
+                                            <th>นอกเขต</th>
+                                            <th>รวม</th>
+                                            <th>ในเขต</th>
+                                            <th>นอกเขต</th>
+                                            <th>รวม</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                        <tr>
+                                            <td>15 ก.พ. 68</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>16 ก.พ. 68</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>17 ก.พ. 68</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>18 ก.พ. 68</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>19 ก.พ. 68</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr class="fw-bold">
+                                            <td>รวม</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+    <?php include('menu-bottom.php'); ?>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
