@@ -82,11 +82,69 @@
             <div class="container-fuid p-4">
                 <h3 class="text-secondary"><i class="fa-solid fa-flask"></i> ห้องเรียนพิเศษ ม.1</h3>
                 <hr class="mb-4">
-
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="text-center table-primary">
+                            <tr>
+                                <th>ลำดับ</th>
+                                <th>เลขประจำตัวประชาชน</th>
+                                <th>ชื่อ-นามสกุล</th>
+                                <th>โรงเรียน</th>
+                                <th>เกตดเฉลี่ย</th>
+                                <th>เบอร์โทร</th>
+                                <th>วันที่สมัคร</th>
+                                <th>อันดับ1</th>
+                                <th>อันดับ2</th>
+                                <th>อันดับ3</th>
+                                <th>เอกสารแนบ</th>
+                                <th>สถานะ</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <?php
+                                include '../dblink.php';
+                                $result = mysqli_query($conn,"SELECT * FROM regis_m1");
+                                $n = 1;
+                                foreach ($result as $value) {
+                            ?>
+                            <tr>
+                                <td><?=$n?></td>
+                                <td><?=$value['code_id']?></td>
+                                <td><?=$value['title'].$value['name'].' '.$value['surname']?></td>
+                                <td><?=$value['school_name']?></td>
+                                <td><?=$value['grade']?></td>
+                                <td><?=$value['tel']?></td>
+                                <td><?=$value['date_regis']?></td>
+                                <td><?=$value['class1']?></td>
+                                <td><?=$value['class2']?></td>
+                                <td><?=$value['class3']?></td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#ModalHome<?=$value['code_id']?>"><i class="fa-solid fa-house-user"></i></button>
+                                    <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#ModalGrade1<?=$value['code_id']?>"><i class="fa-solid fa-file-lines"></i>1</button>
+                                    <?php echo $value['grade_file2'] == '' ? "" : '<button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#ModalGrade2'.$value['code_id'].'"><i class="fa-solid fa-file-lines"></i>2</button>'; ?>
+                                </td>
+                                <td>
+                                    <?php if($value['status'] == "ไม่ผ่าน"){echo "<span class='text-danger'><i class='fa-solid fa-circle-exclamation'></i> ไม่ผ่าน</span>";}else if($value['status'] == "ผ่าน"){echo '<span class="text-success"><i class="fa-solid fa-circle-check"></i> ผ่าน</span>';}else{echo '<span class="text-warning"><i class="fa-solid fa-hourglass-half"></i> รอตรวจ</span>';} ?>
+                                    <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalEditStatus<?=$value['code_id']?>"><i class="fa-solid fa-gear"></i></button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-info"><i class="fa-solid fa-eye"></i></button>
+                                    <button type="button" class="btn btn-sm btn-warning"><i class="fa-solid fa-user-pen"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                </td>
+                            </tr>
+                            <?php include 'modal_m1.php'; ?>
+                            <?php $n++; } ?>
+                        </tbody>
+                    </table>
+                </div>
                 
             </div>
         </div>
     </div>
+
+    
     
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
