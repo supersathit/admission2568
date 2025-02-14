@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 13, 2025 at 10:15 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost
+-- Generation Time: Feb 14, 2025 at 03:24 PM
+-- Server version: 8.0.17
+-- PHP Version: 7.3.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -29,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `amphures` (
   `id` int(5) NOT NULL,
-  `code` varchar(4) NOT NULL,
-  `name_th` varchar(150) NOT NULL,
-  `name_en` varchar(150) NOT NULL,
-  `province_id` int(5) NOT NULL DEFAULT 0
+  `code` varchar(4) COLLATE utf8_unicode_ci NOT NULL,
+  `name_th` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `name_en` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `province_id` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -1046,11 +1047,11 @@ INSERT INTO `amphures` (`id`, `code`, `name_th`, `name_en`, `province_id`) VALUE
 --
 
 CREATE TABLE `districts` (
-  `id` varchar(6) NOT NULL,
+  `id` varchar(6) COLLATE utf8_bin NOT NULL,
   `zip_code` int(11) NOT NULL,
-  `name_th` varchar(150) NOT NULL,
-  `name_en` varchar(150) NOT NULL,
-  `amphure_id` int(11) NOT NULL DEFAULT 0
+  `name_th` varchar(150) COLLATE utf8_bin NOT NULL,
+  `name_en` varchar(150) COLLATE utf8_bin NOT NULL,
+  `amphure_id` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='InnoDB free: 8192 kB';
 
 --
@@ -9924,7 +9925,7 @@ INSERT INTO `districts` (`id`, `zip_code`, `name_th`, `name_en`, `amphure_id`) V
 
 CREATE TABLE `geographies` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='InnoDB free: 8192 kB';
 
 --
@@ -9947,10 +9948,10 @@ INSERT INTO `geographies` (`id`, `name`) VALUES
 
 CREATE TABLE `provinces` (
   `id` int(5) NOT NULL,
-  `code` varchar(2) NOT NULL,
-  `name_th` varchar(150) NOT NULL,
-  `name_en` varchar(150) NOT NULL,
-  `geography_id` int(5) NOT NULL DEFAULT 0
+  `code` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `name_th` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `name_en` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `geography_id` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -10043,43 +10044,43 @@ INSERT INTO `provinces` (`id`, `code`, `name_th`, `name_en`, `geography_id`) VAL
 --
 
 CREATE TABLE `regis_m1` (
-  `code_id` varchar(13) NOT NULL COMMENT 'เลขบัตรประชาชน',
-  `title` varchar(10) NOT NULL COMMENT 'คำนำหน้า',
-  `name` varchar(50) NOT NULL COMMENT 'ชื่อ',
-  `surname` varchar(70) NOT NULL COMMENT 'นามสกุล',
-  `school_name` varchar(50) NOT NULL COMMENT 'โรงเรียน',
-  `school_district` varchar(50) NOT NULL COMMENT 'อำเภอ',
-  `school_province` varchar(50) NOT NULL COMMENT 'จังหวัด',
-  `grade` varchar(5) NOT NULL COMMENT 'ผลการเรียน',
-  `spacial` varchar(70) NOT NULL COMMENT 'ความสามารถพิเศษ',
+  `code_id` varchar(13) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เลขบัตรประชาชน',
+  `title` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'คำนำหน้า',
+  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ชื่อ',
+  `surname` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'นามสกุล',
+  `school_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'โรงเรียน',
+  `school_district` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อำเภอ',
+  `school_province` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'จังหวัด',
+  `grade` varchar(5) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ผลการเรียน',
+  `spacial` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ความสามารถพิเศษ',
   `bdate` date NOT NULL COMMENT 'วันเดือนปีเกิด',
-  `station_bdate` varchar(30) NOT NULL COMMENT 'สถานที่เกิด',
-  `blood` varchar(2) NOT NULL COMMENT 'หมู่เลือด',
-  `home_id` varchar(10) NOT NULL COMMENT 'บ้านเลขที่',
-  `home_group` varchar(9) NOT NULL COMMENT 'หมู่',
-  `alley` varchar(20) NOT NULL COMMENT 'ซอย',
-  `street` varchar(30) NOT NULL COMMENT 'ถนน',
-  `sub_district` varchar(30) NOT NULL COMMENT 'ตำบล',
-  `district` varchar(30) NOT NULL COMMENT 'อำเภอ',
-  `province` varchar(30) NOT NULL COMMENT 'จังหวัด',
+  `station_bdate` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'สถานที่เกิด',
+  `blood` varchar(2) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'หมู่เลือด',
+  `home_id` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'บ้านเลขที่',
+  `home_group` varchar(9) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'หมู่',
+  `alley` varchar(20) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ซอย',
+  `street` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ถนน',
+  `sub_district` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ตำบล',
+  `district` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อำเภอ',
+  `province` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'จังหวัด',
   `post_code` int(11) NOT NULL COMMENT 'รหัสไปรษณีย์',
-  `tel` varchar(10) NOT NULL COMMENT 'เบอร์โทร',
-  `father_name` varchar(30) NOT NULL COMMENT 'ชื่อบิดา',
-  `father_surname` varchar(30) NOT NULL COMMENT 'นามสกุลบิดา',
-  `father_occupation` varchar(70) NOT NULL COMMENT 'อาชีพบิดา',
-  `father_tel` varchar(10) NOT NULL COMMENT 'เบอร์โทรบิดา',
-  `mother_name` varchar(30) NOT NULL COMMENT 'ชื่อมารดา',
-  `mother_surname` varchar(30) NOT NULL COMMENT 'นามสกุลมารดา',
-  `mother_occupation` varchar(70) NOT NULL COMMENT 'อาชีพมารดา',
-  `mother_tel` varchar(10) NOT NULL COMMENT 'เบอร์โทรมารดา',
-  `class1` varchar(10) NOT NULL COMMENT 'อันดับ1',
-  `class2` varchar(10) NOT NULL COMMENT 'อันดับ2',
-  `class3` varchar(10) NOT NULL COMMENT 'อันดับ3',
-  `date_regis` timestamp NOT NULL DEFAULT current_timestamp(),
-  `date_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `house_regis` varchar(30) NOT NULL,
-  `grade_file1` varchar(30) NOT NULL,
-  `grade_file2` varchar(30) DEFAULT NULL,
+  `tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เบอร์โทร',
+  `father_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ชื่อบิดา',
+  `father_surname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'นามสกุลบิดา',
+  `father_occupation` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อาชีพบิดา',
+  `father_tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เบอร์โทรบิดา',
+  `mother_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ชื่อมารดา',
+  `mother_surname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'นามสกุลมารดา',
+  `mother_occupation` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อาชีพมารดา',
+  `mother_tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เบอร์โทรมารดา',
+  `class1` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อันดับ1',
+  `class2` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อันดับ2',
+  `class3` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อันดับ3',
+  `date_regis` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `house_regis` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `grade_file1` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `grade_file2` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `status` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'สถานะ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -10087,8 +10088,18 @@ CREATE TABLE `regis_m1` (
 -- Dumping data for table `regis_m1`
 --
 
-INSERT INTO `regis_m1` (`code_id`, `title`, `name`, `surname`, `school_name`, `school_district`, `school_province`, `grade`, `spacial`, `bdate`, `station_bdate`, `blood`, `home_id`, `home_group`, `alley`, `street`, `sub_district`, `district`, `province`, `post_code`, `tel`, `father_name`, `father_surname`, `father_occupation`, `father_tel`, `mother_name`, `mother_surname`, `mother_occupation`, `mother_tel`, `class1`, `class2`, `class3`, `date_regis`, `date_update`, `house_regis`, `grade_file1`, `grade_file2`, `status`) VALUES
-('1234567890123', 'เด็กชาย', 'สมเกียรติ', 'นาม', 'วัดดอน', 'เมือง', 'กำแพง', '3.25', 'ต่อยเก่ง', '2025-01-26', 'โรงบาลชุมชน', 'A', '123', '5', 'หน้าบ้าน', 'คอนกรีต', '620101', '709', '49', 62000, '0812351435', 'นายสมน้ำ', 'นาม', 'เกษตรกร', '0613851348', 'นางสมเนื้อ', 'นาม', 'ค้าขาย', '0831516516', 'esmat', 'สสวท', 'ep', '2025-02-13 09:00:52', '2025-02-13 09:00:52', '1234567890123.png', '1234567890123.png', '1234567890123.png', 'รอตรวจสอบเอกสาร');
+INSERT INTO `regis_m1` (`code_id`, `title`, `name`, `surname`, `school_name`, `school_district`, `school_province`, `grade`, `spacial`, `bdate`, `station_bdate`, `blood`, `home_id`, `home_group`, `alley`, `street`, `sub_district`, `district`, `province`, `post_code`, `tel`, `father_name`, `father_surname`, `father_occupation`, `father_tel`, `mother_name`, `mother_surname`, `mother_occupation`, `mother_tel`, `class1`, `class2`, `class3`, `date_regis`, `house_regis`, `grade_file1`, `grade_file2`, `status`) VALUES
+('0987654321234', 'เด็กชาย', 'เค', 'ด่วย', 'วัดโบถส์', 'เมือง', 'หนองคาย', '3.60', '-', '2550-01-14', 'บ้าน', 'A', '14/5', '-', '-', '-', 'ในเมือง', 'เมืองหนองคาย', 'หนองคาย', 43000, '0612345778', 'ทอง', 'เค', 'ค้าขาย', '-', 'เงิน', 'เค', 'ค้าขาย', '-', 'ep', 'esmat', 'สสวท', '2025-02-14 09:19:54', '0987654321234.png', '0987654321234.jpg', '', 'รอตรวจสอบเอกสาร'),
+('1234567890123', 'เด็กชาย', 'สมเกียรติ', 'นาม', 'วัดดอน', 'เมือง', 'กำแพง', '3.25', 'ต่อยเก่ง', '2025-01-26', 'โรงบาลชุมชน', 'A', '123', '5', 'หน้าบ้าน', 'คอนกรีต', '620101', '709', '49', 62000, '0812351435', 'นายสมน้ำ', 'นาม', 'เกษตรกร', '0613851348', 'นางสมเนื้อ', 'นาม', 'ค้าขาย', '0831516516', 'esmat', 'สสวท', 'ep', '2025-02-13 09:00:52', '1234567890123.png', '1234567890123.png', '1234567890123.png', 'ผ่าน'),
+('1600100683170', 'เด็กหญิง', 'หทยรัตน์', 'รุ่งประถม', 'วัชรวิทยา', 'เมืองกำแพงเพชร', 'กำแพงเพชร', '4.00', 'สวย', '2015-01-01', 'โรงพยาบาล', 'AB', '93', '-', 'เทศบาล 2', '-', 'ในเมือง', 'เมืองกำแพงเพชร', 'กำแพงเพชร', 62000, '0820202608', 'ออย', 'หทัย', 'นักเรียน', '0624084011', 'ออย2', 'รัตน์', 'นักเรียน', '0624014011', 'esmat', 'สสวท', 'ep', '2025-02-14 08:27:21', '1600100683170.jpg', '1600100683170.png', '1600100683170.png', ''),
+('1629900239764', 'เด็กชาย', 'คน', 'มนุษย์', 'ไฮสคูลบ้านหนองงูเห่า', 'เมือง', 'กำแพงเพชร', '4.00', 'นอนได้ทั้งวัน', '2024-09-10', 'โรงพยาบาล', 'AB', '14', '-', '-', '/', 'ในเมือง', 'เมืองกำแพงเพชร', 'กำแพงเพชร', 62000, '0622333345', 'คน', 'ดี', 'ทหาร', '-', 'แสนดี', 'ดี', 'แม่บ้าน', '-', 'esmat', 'สสวท', 'ep', '2025-02-14 08:34:25', '1629900239764.jpeg', '1629900239764.jpeg', '', ''),
+('1634567891012', 'เด็กชาย', 'รักชาติ', 'เจริญใจ', 'บ้านต้นน้ำ', 'เมือง', 'กำแพงเพชร', '3.70', 'เล่นกีฬา', '2024-09-18', 'กำแพงเพชร', 'B', '13', '1', '-', '-', 'คลองลานพัฒนา', 'คลองลาน', 'กำแพงเพชร', 62180, '0851319783', 'เชิดชู', 'เจริญใจ', 'ค้าขาย', '0851319986', 'ประภา', 'เจริญใจ', 'ค้าขาย', '0991312345', 'esmat', 'สสวท', 'ep', '2025-02-14 08:35:45', '1634567891012.jpg', '1634567891012.jpg', '1634567891012.jpg', 'รอตรวจสอบเอกสาร'),
+('1644327456713', 'เด็กชาย', 'สามารถ', 'ชัยยุทธ', 'บ้านทุ่ง', 'เมือง', 'กำแพงเพชร', '3.59', 'เล่นกีฬา', '2024-10-13', 'กำแพงเพชร', 'AB', '45', '13', '-', '-', 'มหาชัย', 'ไทรงาม', 'กำแพงเพชร', 62150, '0882567134', 'ยุทธนา', 'ชัยยุทธ', 'ทหาร', '0653234477', 'พบพร', 'ชัยยุทธ', 'ค้าขาย', '0912356845', 'esmat', 'สสวท', 'ep', '2025-02-14 08:48:57', '1644327456713.jpg', '1644327456713.jpg', '1644327456713.jpg', 'รอตรวจสอบเอกสาร'),
+('1655443567892', 'เด็กชาย', 'พอเพียง', 'นาน้อย', 'บ้านประชารัก', 'เมือง', 'กำแพงเพชร', '3.56', 'เรียนรู้ได้เร็ว', '2025-02-01', 'กำแพงเพชร', 'O', '34', '1', '-', '-', 'โพธิ์ทอง', 'ปางศิลาทอง', 'กำแพงเพชร', 62120, '0553456789', 'สุดใจ', 'มาน้อย', 'ค้าขาย', '0867112345', 'ขอใจ', 'มาน้อย', 'ค้าขาย', '0889932567', 'สสวท', 'esmat', 'ep', '2025-02-14 09:00:04', '1655443567892.jpg', '1655443567892.jpg', '1655443567892.jpg', 'รอตรวจสอบเอกสาร'),
+('1677899035567', 'เด็กชาย', 'นฤพล', 'แก้วแสง', 'ประชาธิปไตย', 'เมือง', 'กำแพงเพชร', '3.67', 'เล่นดนตรีไทย', '2025-02-17', 'กำแพงเพชร', 'B', '34', '1', '-', '-', 'หินดาต', 'ปางศิลาทอง', 'กำแพงเพชร', 62120, '0895432567', 'ไชยา', 'แก้วแสง', 'เกษตรกร', '0967456321', 'มารยา', 'แก้วแสง', 'ราชการ', '0865432687', 'สสวท', 'esmat', 'ep', '2025-02-14 09:14:33', '1677899035567.jpg', '1677899035567.jpg', '1677899035567.jpg', 'รอตรวจสอบเอกสาร'),
+('1699345678945', 'เด็กชาย', 'สิงหาคม', 'กันยา', 'ปางจิรา', 'เมือง', 'กำแพงเพชร', '3.68', 'ทำงานเร็ว', '2025-02-10', 'กำแพงเพชร', 'O', '4', '1', '-', '-', 'วังยาง', 'คลองขลุง', 'กำแพงเพชร', 62120, '0984124789', 'วิทยาสรณ์', 'คงภักดี', 'ทำธุรกิจ', '0965413456', 'นางกาญจนา', 'แก้วพิกุล', 'ราชการ', '0945678321', 'esmat', 'ep', 'สสวท', '2025-02-14 09:26:06', '1699345678945.jpg', '1699345678945.jpg', '1699345678945.jpg', 'รอตรวจสอบเอกสาร'),
+('1745689346689', 'เด็กหญิง', 'พอเพลิน', 'จิตดี', 'บ้านทุ่งงาม', 'เมือง', 'กำแพงเพชร', '3.89', 'คิดคำนวณ', '2025-02-18', 'กำแพงเพชร', 'B', '45', '3', '-', '-', 'สลกบาตร', 'ขาณุวรลักษบุรี', 'กำแพงเพชร', 62140, '0895674322', 'ชัยชนะ', 'จิตดี', 'ธุรกิจ', '0663445678', 'นางพูลศรี', 'จิตดี', 'ธุรกิจ', '0985145789', 'ep', 'สสวท', 'esmat', '2025-02-14 09:08:30', '1745689346689.jpg', '1745689346689.jpg', '1745689346689.jpg', 'รอตรวจสอบเอกสาร'),
+('1763456784579', 'เด็กหญิง', 'วันนา', 'เพิ่มพูน', 'บ้านทุ่งทอง', 'เมือง', 'กำแพงเพชร', '3.56', 'ดนตรีสากล', '2025-02-04', 'กำแพงเพชร', 'O', '56', '8', '-', '-', 'ระหาน', 'บึงสามัคคี', 'กำแพงเพชร', 62210, '0967543216', 'สิทธิ', 'ประสงค์ศรี', 'ธุรกิจ', '0865412345', 'นางพาเพลิน', 'ชนาพา', 'ธุรกิจ', '0954567834', 'ep', 'สสวท', 'esmat', '2025-02-14 09:22:35', '1763456784579.jpg', '1763456784579.jpg', '1763456784579.jpg', 'รอตรวจสอบเอกสาร');
 
 -- --------------------------------------------------------
 
@@ -10097,40 +10108,40 @@ INSERT INTO `regis_m1` (`code_id`, `title`, `name`, `surname`, `school_name`, `s
 --
 
 CREATE TABLE `regis_m4` (
-  `code_id` varchar(13) NOT NULL COMMENT 'เลขบัตรประชาชน',
-  `title` varchar(10) NOT NULL COMMENT 'คำนำหน้า',
-  `name` varchar(50) NOT NULL COMMENT 'ชื่อ',
-  `surname` varchar(70) NOT NULL COMMENT 'นามสกุล',
-  `school_name` varchar(50) NOT NULL COMMENT 'โรงเรียน',
-  `school_district` varchar(50) NOT NULL COMMENT 'อำเภอ',
-  `school_province` varchar(50) NOT NULL COMMENT 'จังหวัด',
-  `grade` varchar(5) NOT NULL COMMENT 'ผลการเรียน',
-  `spacial` varchar(70) NOT NULL COMMENT 'ความสามารถพิเศษ',
+  `code_id` varchar(13) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เลขบัตรประชาชน',
+  `title` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'คำนำหน้า',
+  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ชื่อ',
+  `surname` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'นามสกุล',
+  `school_name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'โรงเรียน',
+  `school_district` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อำเภอ',
+  `school_province` varchar(50) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'จังหวัด',
+  `grade` varchar(5) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ผลการเรียน',
+  `spacial` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ความสามารถพิเศษ',
   `bdate` date NOT NULL COMMENT 'วันเดือนปีเกิด',
-  `station_bdate` varchar(30) NOT NULL COMMENT 'สถานที่เกิด',
-  `blood` varchar(2) NOT NULL COMMENT 'หมู่เลือด',
-  `home_id` varchar(10) NOT NULL COMMENT 'บ้านเลขที่',
-  `home_group` varchar(9) NOT NULL COMMENT 'หมู่',
-  `alley` varchar(20) NOT NULL COMMENT 'ซอย',
-  `street` varchar(30) NOT NULL COMMENT 'ถนน',
-  `sub_district` varchar(30) NOT NULL COMMENT 'ตำบล',
-  `district` varchar(30) NOT NULL COMMENT 'อำเภอ',
-  `province` varchar(30) NOT NULL COMMENT 'จังหวัด',
+  `station_bdate` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'สถานที่เกิด',
+  `blood` varchar(2) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'หมู่เลือด',
+  `home_id` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'บ้านเลขที่',
+  `home_group` varchar(9) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'หมู่',
+  `alley` varchar(20) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ซอย',
+  `street` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ถนน',
+  `sub_district` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ตำบล',
+  `district` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อำเภอ',
+  `province` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'จังหวัด',
   `post_code` int(11) NOT NULL COMMENT 'รหัสไปรษณีย์',
-  `tel` varchar(10) NOT NULL COMMENT 'เบอร์โทร',
-  `father_name` varchar(30) NOT NULL COMMENT 'ชื่อบิดา',
-  `father_surname` varchar(30) NOT NULL COMMENT 'นามสกุลบิดา',
-  `father_occupation` varchar(70) NOT NULL COMMENT 'อาชีพบิดา',
-  `father_tel` varchar(10) NOT NULL COMMENT 'เบอร์โทรบิดา',
-  `mother_name` varchar(30) NOT NULL COMMENT 'ชื่อมารดา',
-  `mother_surname` varchar(30) NOT NULL COMMENT 'นามสกุลมารดา',
-  `mother_occupation` varchar(70) NOT NULL COMMENT 'อาชีพมารดา',
-  `mother_tel` varchar(10) NOT NULL COMMENT 'เบอร์โทรมารดา',
-  `date_regis` timestamp NOT NULL DEFAULT current_timestamp(),
-  `date_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `house_regis` varchar(30) NOT NULL,
-  `grade_file1` varchar(30) NOT NULL,
-  `grade_file2` varchar(30) DEFAULT NULL,
+  `tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เบอร์โทร',
+  `father_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ชื่อบิดา',
+  `father_surname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'นามสกุลบิดา',
+  `father_occupation` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อาชีพบิดา',
+  `father_tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เบอร์โทรบิดา',
+  `mother_name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ชื่อมารดา',
+  `mother_surname` varchar(30) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'นามสกุลมารดา',
+  `mother_occupation` varchar(70) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'อาชีพมารดา',
+  `mother_tel` varchar(10) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'เบอร์โทรมารดา',
+  `date_regis` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `house_regis` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `grade_file1` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `grade_file2` varchar(30) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `status` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'สถานะ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -10138,8 +10149,17 @@ CREATE TABLE `regis_m4` (
 -- Dumping data for table `regis_m4`
 --
 
-INSERT INTO `regis_m4` (`code_id`, `title`, `name`, `surname`, `school_name`, `school_district`, `school_province`, `grade`, `spacial`, `bdate`, `station_bdate`, `blood`, `home_id`, `home_group`, `alley`, `street`, `sub_district`, `district`, `province`, `post_code`, `tel`, `father_name`, `father_surname`, `father_occupation`, `father_tel`, `mother_name`, `mother_surname`, `mother_occupation`, `mother_tel`, `date_regis`, `date_update`, `house_regis`, `grade_file1`, `grade_file2`, `status`) VALUES
-('1234567890120', 'นางสาว', 'วันทอง', 'สองใจ', 'วัดดอน', 'เมือง', 'กำแพง', '3.55', 'ตีลังกา', '2024-03-31', 'หน้าบ้าน', 'O', '321', '5', '2', 'ลาดยาง', '101401', '14', '1', 10400, '0852323232', 'นายวันนั้น', 'สองใจ', 'ค้าขาย', '0612312312', 'นางวันนี้', 'สองใจ', 'ค้าขาย', '0856656565', '2025-02-13 09:10:05', '2025-02-13 09:10:05', '1234567890120.png', '1234567890120.png', '1234567890120.png', 'รอตรวจสอบเอกสาร');
+INSERT INTO `regis_m4` (`code_id`, `title`, `name`, `surname`, `school_name`, `school_district`, `school_province`, `grade`, `spacial`, `bdate`, `station_bdate`, `blood`, `home_id`, `home_group`, `alley`, `street`, `sub_district`, `district`, `province`, `post_code`, `tel`, `father_name`, `father_surname`, `father_occupation`, `father_tel`, `mother_name`, `mother_surname`, `mother_occupation`, `mother_tel`, `date_regis`, `house_regis`, `grade_file1`, `grade_file2`, `status`) VALUES
+('0987653746515', 'เด็กหญิง', 'เลน่า', 'เลนส์', 'วัชรวิทยา', 'เมือง', 'กำแพงเพชร', '3.66', 'กินเจ', '2018-02-14', 'บ้าน', 'B', '14/ึ', '-', '-', '-', 'วังชะพลู', 'ขาณุวรลักษบุรี', 'กำแพงเพชร', 62140, '0612345779', 'เฮเมอร์', 'เลนส์', 'ค้าขายทอง', '0831244567', 'ลิซ่า', 'เลนส์', 'ค้าขาย', '-', '2025-02-14 09:31:08', '0987653746515.jpg', '0987653746515.jpg', '0987653746515.png', 'รอตรวจสอบเอกสาร'),
+('0987654321978', 'นางสาว', 'สโลชา', 'ค้าขาย', 'บ้านพรานนก', 'เมือง', 'กำแพงเพชร', '3.66', '-', '2025-02-05', 'บ้าน', 'AB', '14/ึ', '-', '-', '-', 'พรานกระต่าย', 'พรานกระต่าย', 'กำแพงเพชร', 62110, '0612345779', 'เฮเมอร์', 'ค้าขาย', 'ค้าขายทอง', '0831244567', 'ลิซ่า', 'ค้าขาย', 'ค้าขาย', '0987654321', '2025-02-14 09:34:43', '0987654321978.webp', '0987654321978.jpg', '', 'รอตรวจสอบเอกสาร'),
+('1234567890120', 'นางสาว', 'วันทอง', 'สองใจ', 'วัดดอน', 'เมือง', 'กำแพง', '3.55', 'ตีลังกา', '2024-03-31', 'หน้าบ้าน', 'O', '321', '5', '2', 'ลาดยาง', '101401', '14', '1', 10400, '0852323232', 'นายวันนั้น', 'สองใจ', 'ค้าขาย', '0612312312', 'นางวันนี้', 'สองใจ', 'ค้าขาย', '0856656565', '2025-02-13 09:10:05', '1234567890120.png', '1234567890120.png', '1234567890120.png', 'ผ่าน'),
+('1234567890124', 'นาย', 'โจน', 'สลัด', 'วัชรวิทยา', 'เมือง', 'กำแพงเพชร', '3.66', '-', '2025-02-05', 'บ้าน', 'A', '14/9', '-', '-', '-', 'วังยาง', 'คลองขลุง', 'กำแพงเพชร', 62120, '0612345770', 'ผักสด', 'สลัด', 'ค้าขายทอง', '0831244567', 'ผลไม้', 'สลัด', 'ค้าขาย', '0987654321', '2025-02-14 09:37:14', '1234567890124.webp', '1234567890124.png', '', 'รอตรวจสอบเอกสาร'),
+('1622345689456', 'เด็กหญิง', 'พรปรียา', 'เพียรดี', 'บ้านทุ่งใหญ่', 'เมือง', 'กำแพงเพชร', '3.80', 'เล่นดนตรี', '2024-05-06', 'คลองขลุง จ.กำแพงเพชร', 'A', '14', '1', '-', '-', 'ท่ามะเขือ', 'คลองขลุง', 'กำแพงเพชร', 62120, '0957301540', 'ทศพล', 'เพียรดี', 'การเกษตร', '0642871435', 'สมใจ', 'เพียรดี', 'ค้าขาย', '0557119034', '2025-02-14 08:41:58', '1622345689456.jpg', '1622345689456.jpg', '1622345689456.jpg', 'รอตรวจสอบเอกสาร'),
+('1644235678917', 'เด็กชาย', 'พิชัย', 'เกิดแก้ว', 'บ้านทุ่ง', 'เมือง', 'กำป', '3.75', 'เล่นฟุตบอล', '2025-02-14', 'กำแพงเพชร', 'AB', '71', '3', '-', '-', 'เขาคีริส', 'พรานกระต่าย', 'กำแพงเพชร', 62110, '0845789012', 'นายภูมิธรรม', 'เกิดแก้ว', 'ตำรวจ', '0653456788', 'สุดใจ', 'เกิดแก้ว', 'ค้าขาย', '0865345678', '2025-02-14 08:55:08', '1644235678917.jpg', '1644235678917.jpg', '1644235678917.jpg', 'รอตรวจสอบเอกสาร'),
+('1678555321349', 'นาย', 'ชัยยุทธ', 'เพียงประมาณ', 'วงพิทักษ์', 'เมือง', 'ตาก', '3.87', 'ฟุตบอล', '2025-02-16', 'กำแพงเพชร', 'AB', '4', '1', '-', '-', 'เชียงเงิน', 'เมืองตาก', 'ตาก', 63000, '0843145690', 'ปองภพ', 'มั่นใจ', 'บริการ', '0894563219', 'นางพิมลอย', 'คล้อยใจ', 'ราชการ', '0945678310', '2025-02-14 09:30:20', '1678555321349.jpg', '1678555321349.jpg', '1678555321349.jpg', 'รอตรวจสอบเอกสาร'),
+('1689342111567', 'นาย', 'ชัยยุทธ', 'เพียงพอ', 'ประชารักษ์พัฒนา', 'เมือง', 'กำแพงเพชร', '3.79', 'เล่นแบดมินตัน', '2025-02-16', 'กำแพงเพชร', 'AB', '36', '1', '-', '-', 'หนองหลวง', 'ลานกระบือ', 'กำแพงเพชร', 62170, '0875411256', 'นายคงศักดิ์', 'พอเพียง', 'ทหาร', '0976516589', 'นางมีนา', 'พอเพียง', 'ค้าขาย', '0643256781', '2025-02-14 09:04:24', '1689342111567.jpg', '1689342111567.jpg', '1689342111567.jpg', 'รอตรวจสอบเอกสาร'),
+('1699456667777', 'นางสาว', 'พรไพ', 'ลิน', 'วัดจ่านางร้อง', 'เมือง', 'กำแพงเพชร', '3.67', 'ร้องเพลง', '2025-02-16', 'กำแพงเพชร', 'AB', '48', '6', '-', '-', 'บึงทับแรต', 'ลานกระบือ', 'กำแพงเพชร', 62170, '0865145687', 'นายพานทอง', 'สิงใจ', 'ค้าขาย', '0678432156', 'นางพญาใจ', 'กรกนก', 'ธุรกิจ', '0674567834', '2025-02-14 09:17:24', '1699456667777.jpg', '1699456667777.jpg', '1699456667777.jpg', 'รอตรวจสอบเอกสาร'),
+('7685946312346', 'นาย', 'โลกิ', 'แอสกาด', 'วัชรวิทยา', 'เมือง', 'กำแพงเพชร', '3.60', 'กินจุ', '2024-07-17', 'บ้าน', 'O', '14/ึ', '-', '-', '-', 'ในเมือง', 'เมืองกำแพงเพชร', 'กำแพงเพชร', 62000, '0612345779', 'เฮเมอร์', 'แอสกาด', 'ค้าขายทอง', '0831244567', 'ลิซ่า', 'แอสกาด', 'ค้าขาย', '-', '2025-02-14 09:25:11', '7685946312346.webp', '7685946312346.jpg', '', 'รอตรวจสอบเอกสาร');
 
 --
 -- Indexes for dumped tables

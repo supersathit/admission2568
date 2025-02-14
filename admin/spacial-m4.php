@@ -101,7 +101,7 @@
                         <tbody class="text-center">
                             <?php
                                 include '../dblink.php';
-                                $result = mysqli_query($conn,"SELECT * FROM regis_m4");
+                                $result = mysqli_query($conn,"SELECT * FROM regis_m4 ORDER BY date_regis");
                                 $n = 1;
                                 foreach ($result as $value) {
                             ?>

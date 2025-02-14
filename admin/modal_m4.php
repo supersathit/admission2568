@@ -52,26 +52,30 @@
       </div>
       <form action="edit_status_m4.php" method="post">
         <div class="modal-body">
-            <div class="text-center d-flex justify-content-center py-2">
-                <input type="text" name="code_id" value="<?=$value['code_id']?>" style="display: none;">
-                <div class="m-1">
-                  <input type="radio" class="btn-check" name="status" id="success-outlined" autocomplete="off" value="ผ่าน">
-                  <label class="btn btn-outline-success" for="success-outlined">ผ่าน</label>
-                </div>
-                <div class="m-1">
-                  <input type="radio" class="btn-check" name="status" id="danger-outlined" autocomplete="off" value="ไม่ผ่าน">
-                  <label class="btn btn-outline-danger" for="danger-outlined">ไม่ผ่าน</label>
-                </div>
-                <div class="m-1">
-                  <input type="radio" class="btn-check" name="status" id="warning-outlined" autocomplete="off" value="รอตรวจสอบเอกสาร">
-                  <label class="btn btn-outline-warning" for="warning-outlined">รอตรวจสอบ</label>
-                </div>
-            </div>
+          <input type="text" name="code_id" value="<?=$value['code_id']?>" style="display: none;">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" value="ผ่าน">
+            <label class="form-check-label" for="flexRadioDefault1">
+              ผ่าน
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2" value="ไม่ผ่าน">
+            <label class="form-check-label" for="flexRadioDefault2">
+              ไม่ผ่าน
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="status" id="flexRadioDefault3" value="รอตรวจสอบเอกสาร">
+            <label class="form-check-label" for="flexRadioDefault3">
+              รอตรวจ
+            </label>
+          </div>
         </div>
         <div class="modal-footer bg-light">
-            <button type="submit" class="btn btn-primary">ยืนยัน</button>
+          <button type="submit" class="btn btn-primary">ยืนยัน</button>
         </div>
-    </form>
+      </form>
     </div>
   </div>
 </div>
