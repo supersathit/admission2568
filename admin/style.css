@@ -83,7 +83,7 @@
     li {
         float:left;
         border-right:2px solid #bbb;
-        width: 33.33%;
+        width: 25%;
     }
     
     li:last-child {

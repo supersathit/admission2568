@@ -9,5 +9,7 @@
         $_SESSION['password'] = 'Admin@WrAdmission1234';
 
         Header("Location: index.php");
+    }else{
+        header("location: login.php");
     }
 ?>
