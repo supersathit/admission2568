@@ -67,18 +67,18 @@
 <body class="bg-warning">
     <div class="login-container">
         <div class="logo mb-3">
-            <i class="fa-solid fa-user-tie text-secondary" style="font-size: 100px;"></i>
+            <i class="fa-solid fa-user-secret text-secondary" style="font-size: 100px;"></i>
         </div>
-        <h1>Welcome to Admin pre M1</h1>
+        <h1>Welcome to Admin Wr Admission</h1>
         <hr>
         <form action="php_login.php" method="post">
             <div class="mb-3 text-start">
                 <label for="usernaem" class="form-label"><i class="fa-solid fa-circle-user"></i> Username</label>
-                <input type="text" id="username" class="form-control" name="username" required>
+                <input type="text" id="username" class="form-control" name="username" placeholder="😎" required>
             </div>
             <div class="mb-3 text-start">
                 <label for="password" class="form-label"><i class="fa-solid fa-key"></i> Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <input type="password" class="form-control" id="password" name="password" placeholder="🔐" required>
             </div>
             <button type="submit" class="login-button">LOGIN</button>
         </form>
