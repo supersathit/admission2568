@@ -27,6 +27,7 @@
           โรงเรียนวัชรวิทยา
         </h3>
         <p id="regis" class="text-center">93 ถนนเทศบาล 2 ตำบลในเมือง อำเภอเมืองกำแพงเพชร จังหวัดกำแพงเพชร 62000 <br>โทรศัพท์ 055 711 901</p>
+        <p class="text-center text-danger">เพื่อความสะดวก ท่านสามารถติดต่อได้ทาง Line : <a href="http://" class="btn btn-success"><i class="fa-regular fa-hand-pointer"></i> <i class="fa-brands fa-line"></i> WR-Admission2568</a></p>
       </div>
 
       <div class="row justify-content-center mb-3">
