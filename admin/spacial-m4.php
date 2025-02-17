@@ -124,7 +124,7 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-info"><i class="fa-solid fa-eye"></i></button>
-                                    <button type="button" class="btn btn-sm btn-warning"><i class="fa-solid fa-user-pen"></i></button>
+                                    <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit<?=$value['code_id']?>"><i class="fa-solid fa-user-pen"></i></button>
                                     <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                                 </td>
                             </tr>
