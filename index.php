@@ -159,7 +159,7 @@
       <?php
         function date_time_m1($date1,$date2){
           include 'dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND status = 'ผ่าน'"));
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
           return $value['COUNT(*)'];
         }
         $dayM1_1 = date_time_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
@@ -170,7 +170,7 @@
         
         function date_time_m4($date1,$date2){
           include 'dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND status = 'ผ่าน'"));
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
           return $value['COUNT(*)'];
         }
         $dayM4_1 = date_time_m4("2025-02-15 16:30:00","2025-02-13 16:30:00");
