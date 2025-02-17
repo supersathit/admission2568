@@ -27,7 +27,7 @@
           โรงเรียนวัชรวิทยา
         </h3>
         <p id="regis" class="text-center">93 ถนนเทศบาล 2 ตำบลในเมือง อำเภอเมืองกำแพงเพชร จังหวัดกำแพงเพชร 62000 <br>โทรศัพท์ 055 711 901</p>
-        <p class="text-center text-danger">เพื่อความสะดวก ท่านสามารถติดต่อได้ทาง Line : <a href="http://" class="btn btn-success"><i class="fa-regular fa-hand-pointer"></i> <i class="fa-brands fa-line"></i> WR-Admission2568</a></p>
+        <p class="text-center text-danger">เพื่อความสะดวก ท่านสามารถติดต่อได้ทาง Line : <a href="https://page.line.me/145xeekj" class="btn btn-success"><i class="fa-regular fa-hand-pointer"></i> <i class="fa-brands fa-line"></i> WR-Admission2568</a></p>
       </div>
 
       <div class="row justify-content-center mb-3">
@@ -155,6 +155,31 @@
       ele.onKeyPress=vchar;
       }
     </script>
+
+      <?php
+        function date_time_m1($date1,$date2){
+          include 'dblink.php';
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND status = 'ผ่าน'"));
+          return $value['COUNT(*)'];
+        }
+        $dayM1_1 = date_time_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
+        $dayM1_2 = date_time_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
+        $dayM1_3 = date_time_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
+        $dayM1_4 = date_time_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
+        $dayM1_5 = date_time_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
+        
+        function date_time_m4($date1,$date2){
+          include 'dblink.php';
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND status = 'ผ่าน'"));
+          return $value['COUNT(*)'];
+        }
+        $dayM4_1 = date_time_m4("2025-02-15 16:30:00","2025-02-13 16:30:00");
+        $dayM4_2 = date_time_m4("2025-02-16 16:30:00","2025-02-15 16:30:00");
+        $dayM4_3 = date_time_m4("2025-02-17 16:30:00","2025-02-16 16:30:00");
+        $dayM4_4 = date_time_m4("2025-02-18 16:30:00","2025-02-17 16:30:00");
+        $dayM4_5 = date_time_m4("2025-02-19 16:30:00","2025-02-18 16:30:00");
+      ?>
+
     <script type="text/javascript">
 
       const ctx = document.getElementById('myChart');
@@ -171,13 +196,13 @@
           ],
           datasets: [{
             label: 'ห้องเรียนพิเศษ ม.1',
-            data: [0, 0, 0, 0, 0],
+            data: [<?=$dayM1_1?>, <?=$dayM1_2?>, <?=$dayM1_3?>, <?=$dayM1_4?>, <?=$dayM1_5?>],
             borderWidth: 1,
             borderColor: 'rgb(235, 54, 196)',
             backgroundColor: 'rgba(235, 54, 160, 0.2)'
           },{
             label: 'ห้องเรียนพิเศษ ม.4',
-            data : [0, 0, 0, 0, 0],
+            data : [<?=$dayM4_1?>, <?=$dayM4_2?>, <?=$dayM4_3?>, <?=$dayM4_4?>, <?=$dayM4_5?>],
             borderWidth: 1,
             borderColor: 'rgb(54, 162, 235)',
             backgroundColor: 'rgba(54, 162, 235, 0.2)'
