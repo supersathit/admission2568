@@ -142,65 +142,98 @@
                                             <th>ในเขต</th>
                                             <th>นอกเขต</th>
                                             <th>รวม</th>
-                                            <th>ในเขต</th>
-                                            <th>นอกเขต</th>
                                             <th>รวม</th>
                                         </tr>
                                     </thead>
                                     <tbody class="text-center">
+                                    <?php
+                                        function in_m1($date1,$date2){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district = 'เมืองกำแพงเพชร'"));
+                                            return $value['COUNT(*)'];
+                                        }
+                                        function out_m1($date1,$date2){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district != 'เมืองกำแพงเพชร'"));
+                                            return $value['COUNT(*)'];
+                                        }
+                                        function c_m1($date1,$date2){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+                                            return $value['COUNT(*)'];
+                                        }
+                                        $total_in_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE district = 'เมืองกำแพงเพชร'"));
+                                        $total_out_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE district != 'เมืองกำแพงเพชร'"));
+                                        $total = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 "));
+                                        $total_m4 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 "));
+                                        $c_M1_1 = c_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
+                                        $c_M1_2 = c_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
+                                        $c_M1_3 = c_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
+                                        $c_M1_4 = c_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
+                                        $c_M1_5 = c_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
+                                        $in_M1_1 = in_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
+                                        $in_M1_2 = in_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
+                                        $in_M1_3 = in_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
+                                        $in_M1_4 = in_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
+                                        $in_M1_5 = in_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
+                                        $out_M1_1 = out_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
+                                        $out_M1_2 = out_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
+                                        $out_M1_3 = out_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
+                                        $out_M1_4 = out_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
+                                        $out_M1_5 = out_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
+                                        
+                                        function m4($date1,$date2){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+                                            return $value['COUNT(*)'];
+                                        }
+                                        $M4_1 = m4("2025-02-15 16:30:00","2025-02-13 16:30:00");
+                                        $M4_2 = m4("2025-02-16 16:30:00","2025-02-15 16:30:00");
+                                        $M4_3 = m4("2025-02-17 16:30:00","2025-02-16 16:30:00");
+                                        $M4_4 = m4("2025-02-18 16:30:00","2025-02-17 16:30:00");
+                                        $M4_5 = m4("2025-02-19 16:30:00","2025-02-18 16:30:00");
+                                    ?>
                                         <tr>
                                             <td>15 ก.พ. 68</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?=$in_M1_1?></td>
+                                            <td><?=$out_M1_1?></td>
+                                            <td><?=$c_M1_1?></td>
+                                            <td><?=$M4_1?></td>
                                         </tr>
                                         <tr>
                                             <td>16 ก.พ. 68</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?=$in_M1_2?></td>
+                                            <td><?=$out_M1_2?></td>
+                                            <td><?=$c_M1_2?></td>
+                                            <td><?=$M4_2?></td>
                                         </tr>
                                         <tr>
                                             <td>17 ก.พ. 68</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?=$in_M1_3?></td>
+                                            <td><?=$out_M1_3?></td>
+                                            <td><?=$c_M1_3?></td>
+                                            <td><?=$M4_3?></td>
                                         </tr>
                                         <tr>
                                             <td>18 ก.พ. 68</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?=$in_M1_4?></td>
+                                            <td><?=$out_M1_4?></td>
+                                            <td><?=$c_M1_4?></td>
+                                            <td><?=$M4_4?></td>
                                         </tr>
                                         <tr>
                                             <td>19 ก.พ. 68</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?=$in_M1_5?></td>
+                                            <td><?=$out_M1_5?></td>
+                                            <td><?=$c_M1_5?></td>
+                                            <td><?=$M4_5?></td>
                                         </tr>
                                         <tr class="fw-bold">
                                             <td>รวม</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><?=$total_in_m1["COUNT(*)"]?></td>
+                                            <td><?=$total_out_m1["COUNT(*)"]?></td>
+                                            <td><?=$total["COUNT(*)"]?></td>
+                                            <td><?=$total_m4["COUNT(*)"]?></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -229,7 +262,7 @@
     <?php
         function date_time_m1($date1,$date2){
           include '../dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND status = 'ผ่าน'"));
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
           return $value['COUNT(*)'];
         }
         $dayM1_1 = date_time_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
@@ -240,7 +273,7 @@
         
         function date_time_m4($date1,$date2){
           include '../dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND status = 'ผ่าน'"));
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
           return $value['COUNT(*)'];
         }
         $dayM4_1 = date_time_m4("2025-02-15 16:30:00","2025-02-13 16:30:00");
