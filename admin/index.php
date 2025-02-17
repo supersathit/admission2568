@@ -122,13 +122,13 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-12 mb-3">
+                    <div class="col-lg-6 col-12 mb-4">
                         <!-- chart -->
                         <div id="stat" class="bg-light card rounded-3 shadow p-3">
                             <canvas id="myChart"></canvas>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-12 mb-3">
+                    <div class="col-lg-6 col-12 mb-4">
                         <div class="card rounded-3 p-2 shadow">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-striped">
@@ -235,6 +235,147 @@
                                             <td><?=$total["COUNT(*)"]?></td>
                                             <td><?=$total_m4["COUNT(*)"]?></td>
                                         </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="card rounded-3 p-2 shadow">
+                            <h4 class="text-center">จำนวนที่สมัครรายวัน ห้องเรียนพิเศษ ม.1</h4>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-striped">
+                                    <thead class="text-center table-primary">
+                                        <tr>
+                                            <th rowspan="2">ห้อง</th>
+                                            <th colspan="3">15 ก.พ. 68</th>
+                                            <th colspan="3">16 ก.พ. 68</th>
+                                            <th colspan="3">17 ก.พ. 68</th>
+                                            <th colspan="3">18 ก.พ. 68</th>
+                                            <th colspan="3">19 ก.พ. 68</th>
+                                        </tr>
+                                        <tr>
+                                            <th>ในเขต</th>
+                                            <th>นอกเขต</th>
+                                            <th>รวม</th>
+                                            <th>ในเขต</th>
+                                            <th>นอกเขต</th>
+                                            <th>รวม</th>
+                                            <th>ในเขต</th>
+                                            <th>นอกเขต</th>
+                                            <th>รวม</th>
+                                            <th>ในเขต</th>
+                                            <th>นอกเขต</th>
+                                            <th>รวม</th>
+                                            <th>ในเขต</th>
+                                            <th>นอกเขต</th>
+                                            <th>รวม</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-center">
+                                    <?php
+                                        function in($date1,$date2,$plan){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district = 'เมืองกำแพงเพชร' AND class1 = '$plan'"));
+                                            return $value['COUNT(*)'];
+                                        }
+                                        function out($date1,$date2,$plan){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district != 'เมืองกำแพงเพชร' AND class1 = '$plan'"));
+                                            return $value['COUNT(*)'];
+                                        }
+                                        function c($date1,$date2,$plan){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND class1 = '$plan'"));
+                                            return $value['COUNT(*)'];
+                                        }
+                                        
+                                        $day1_1 = "2025-02-15 16:30:00";
+                                        $day1_2 = "2025-02-14 16:30:00";
+                                        $day2_1 = "2025-02-16 16:30:00";
+                                        $day2_2 = "2025-02-15 16:30:00";
+                                        $day3_1 = "2025-02-17 16:30:00";
+                                        $day3_2 = "2025-02-16 16:30:00";
+                                        $day4_1 = "2025-02-18 16:30:00";
+                                        $day4_2 = "2025-02-17 16:30:00";
+                                        $day5_1 = "2025-02-19 16:30:00";
+                                        $day5_2 = "2025-02-18 16:30:00";
+                                        
+                                    ?>
+                                        
+                                        <tr>
+                                            <td>EP</td>
+                                            <td><?=in($day1_1,$day1_2,"ep")?></td>
+                                            <td><?=out($day1_1,$day1_2,"ep")?></td>
+                                            <td><?=c($day1_1,$day1_2,"ep")?></td>
+                                            <td><?=in($day2_1,$day2_2,"ep")?></td>
+                                            <td><?=out($day2_1,$day2_2,"ep")?></td>
+                                            <td><?=c($day2_1,$day2_2,"ep")?></td>
+                                            <td><?=in($day3_1,$day3_2,"ep")?></td>
+                                            <td><?=out($day3_1,$day3_2,"ep")?></td>
+                                            <td><?=c($day3_1,$day3_2,"ep")?></td>
+                                            <td><?=in($day4_1,$day4_2,"ep")?></td>
+                                            <td><?=out($day4_1,$day4_2,"ep")?></td>
+                                            <td><?=c($day4_1,$day4_2,"ep")?></td>
+                                            <td><?=in($day5_1,$day5_2,"ep")?></td>
+                                            <td><?=out($day5_1,$day5_2,"ep")?></td>
+                                            <td><?=c($day5_1,$day5_2,"ep")?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>สสวท.</td>
+                                            <td><?=in($day1_1,$day1_2,"สสวท")?></td>
+                                            <td><?=out($day1_1,$day1_2,"สสวท")?></td>
+                                            <td><?=c($day1_1,$day1_2,"สสวท")?></td>
+                                            <td><?=in($day2_1,$day2_2,"สสวท")?></td>
+                                            <td><?=out($day2_1,$day2_2,"สสวท")?></td>
+                                            <td><?=c($day2_1,$day2_2,"สสวท")?></td>
+                                            <td><?=in($day3_1,$day3_2,"สสวท")?></td>
+                                            <td><?=out($day3_1,$day3_2,"สสวท")?></td>
+                                            <td><?=c($day3_1,$day3_2,"สสวท")?></td>
+                                            <td><?=in($day4_1,$day4_2,"สสวท")?></td>
+                                            <td><?=out($day4_1,$day4_2,"สสวท")?></td>
+                                            <td><?=c($day4_1,$day4_2,"สสวท")?></td>
+                                            <td><?=in($day5_1,$day5_2,"สสวท")?></td>
+                                            <td><?=out($day5_1,$day5_2,"สสวท")?></td>
+                                            <td><?=c($day5_1,$day5_2,"สสวท")?></td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-SMAT</td>
+                                            <td><?=in($day1_1,$day1_2,"esmat")?></td>
+                                            <td><?=out($day1_1,$day1_2,"esmat")?></td>
+                                            <td><?=c($day1_1,$day1_2,"esmat")?></td>
+                                            <td><?=in($day2_1,$day2_2,"esmat")?></td>
+                                            <td><?=out($day2_1,$day2_2,"esmat")?></td>
+                                            <td><?=c($day2_1,$day2_2,"esmat")?></td>
+                                            <td><?=in($day3_1,$day3_2,"esmat")?></td>
+                                            <td><?=out($day3_1,$day3_2,"esmat")?></td>
+                                            <td><?=c($day3_1,$day3_2,"esmat")?></td>
+                                            <td><?=in($day4_1,$day4_2,"esmat")?></td>
+                                            <td><?=out($day4_1,$day4_2,"esmat")?></td>
+                                            <td><?=c($day4_1,$day4_2,"esmat")?></td>
+                                            <td><?=in($day5_1,$day5_2,"esmat")?></td>
+                                            <td><?=out($day5_1,$day5_2,"esmat")?></td>
+                                            <td><?=c($day5_1,$day5_2,"esmat")?></td>
+                                        </tr>
+                                        <tr class="fw-bold">
+                                            <td>รวม(รายวัน)</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><?=$c_M1_1?></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><?=$c_M1_2?></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><?=$c_M1_3?></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><?=$c_M1_4?></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><?=$c_M1_5?></td>
+                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
