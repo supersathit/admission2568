@@ -37,30 +37,34 @@
                                 include '../dblink.php';
                                 $total = @$_GET['total'];
                                 if($total == "total"){
+                                    $plan = "ทั้งหมด";
                                     $result = mysqli_query($conn,"SELECT * FROM regis_m1 ORDER BY date_regis");
                                     $total_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1"));
                                     $in_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district = 'เมืองกำแพงเพชร'"));
                                     $out_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district != 'เมืองกำแพงเพชร'"));
                                 }else if($total == "e-smat"){
+                                    $plan = "E-SMAT";
                                     $result = mysqli_query($conn,"SELECT * FROM regis_m1 where class1 = 'esmat' ORDER BY date_regis");
                                     $total_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where class1 = 'esmat'"));
                                     $in_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district = 'เมืองกำแพงเพชร' and class1 = 'esmat'"));
                                     $out_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district != 'เมืองกำแพงเพชร' and class1 = 'esmat'"));
                                 }else if($total == "ssvt"){
+                                    $plan = "สสวท";
                                     $result = mysqli_query($conn,"SELECT * FROM regis_m1 where class1 = 'สสวท' ORDER BY date_regis");
                                     $total_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where class1 = 'สสวท'"));
                                     $in_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district = 'เมืองกำแพงเพชร' and class1 = 'สสวท'"));
                                     $out_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district != 'เมืองกำแพงเพชร' and class1 = 'สสวท'"));
                                 }else if($total == "ep"){
+                                    $plan = "EP";
                                     $result = mysqli_query($conn,"SELECT * FROM regis_m1 where class1 = 'ep' ORDER BY date_regis");
                                     $total_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where class1 = 'ep'"));
                                     $in_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district = 'เมืองกำแพงเพชร' and class1 = 'ep'"));
                                     $out_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT count(*) FROM regis_m1 where district != 'เมืองกำแพงเพชร' and class1 = 'ep'"));
                                 }
-                                $plan = mysqli_fetch_array($result);
+                                
                 ?>
                 <h4 class="mb-3">
-                    แผนการเรียน <span class="text-danger"><?=$plan['class1']?></span>
+                    แผนการเรียน <span class="text-danger"><?=$plan?></span>
                     จำนวนทั้งหมด <span class="badge bg-primary"><?=$total_m1['count(*)']?></span> คน
                     / ในเขต <span class="badge bg-success"><?=$in_m1['count(*)']?></span> คน
                     / นอกเขต <span class="badge bg-warning"><?=$out_m1['count(*)']?></span> คน
