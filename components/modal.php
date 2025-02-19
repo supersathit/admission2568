@@ -102,7 +102,7 @@
             - คนที่กรอกข้อมูลสมัครมาแล้ว ให้เข้าไปตรวจสอบผลการสมัคร<br>
             - หากสถานะสุดท้ายยังขึ้น <span class="text-warning">รอตรวจเอกสาร</span> ให้ท่านโปรดรอและตรวจสอบอีกครั้งในวันถัดไป <br>
             - หากเอกสารมีปัญหา จะมีเจ้าหน้าที่ติดต่อหาทันที <br>
-            - หากมีข้อสงสัยสามารถสอบถามได้ที่ 👉 <a href="https://page.line.me/145xeekj" class="btn btn-success"><i class="fa-regular fa-hand-pointer"></i> <i class="fa-brands fa-line"></i> WR-Admission2568</a>
+            - หากมีข้อสงสัยสามารถสอบถามได้ที่ 👉 <a href="https://page.line.me/145xeekj" class="btn btn-success"><i class="fa-brands fa-line"></i> WR-Admission2568</a>
         </p>
       </div>
     </div>
