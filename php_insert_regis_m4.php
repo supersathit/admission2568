@@ -1,3 +1,11 @@
+<script>
+    let a = new Date("2025-02-19T09:30:00Z")
+    let b = new Date()
+    if(b > a){
+        alert('ขออภัย หมดเวลาสมัครแล้ว');
+        window.location.href='index.php';
+    }
+</script>
 <?php
 
     include "dblink.php";

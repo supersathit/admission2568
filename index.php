@@ -39,7 +39,7 @@
             </div> -->
             <h4 class="fw-bold mt-2 text-center">ชั้นมัธยมศึกษาปีที่ 1</h4>
             <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
-            <button type="button" class="btn btn-lg btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdropM1">
+            <button type="button" class="btn btn-lg btn-success" data-bs-toggle="modal" id="openModalM1" data-bs-target="#staticBackdropM1">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1
             </button>
             <!-- <a href="detail.php" class="btn btn-lg btn-success m-2"><i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1</a> -->
@@ -55,7 +55,7 @@
             <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
             <!-- <a href="" class="btn btn-warning m-2"><i class="fa-solid fa-address-card"></i> กรอกข้อมูลสมัคร</a> -->
             <!-- Button trigger modal -->
-            <button id="status" type="button" class="btn btn-lg btn-info" data-bs-toggle="modal" data-bs-target="#staticBackdropM4">
+            <button type="button" class="btn btn-lg btn-info" data-bs-toggle="modal" id="openModalM4" data-bs-target="#staticBackdropM4">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 4
             </button>
 
@@ -225,6 +225,25 @@
       $(window).on('load', function() {
           $('#exampleModal').modal('show');
       });
+
+      function myFunction1(){
+        document.getElementById("openModalM1").setAttribute("data-bs-target","#ModalClose");
+        document.getElementById("openModalM4").setAttribute("data-bs-target","#ModalClose");
+      }
+      function myFunction2(){
+        document.getElementById("openModalM1").setAttribute("data-bs-target","#staticBackdropM1");
+        document.getElementById("openModalM4").setAttribute("data-bs-target","#staticBackdropM4");
+      }
+      
+      let a = new Date("2025-02-19T09:30:00Z")
+      let b = new Date()
+      if(b > a){
+        myFunction1();
+      }else{
+        myFunction2();
+      }
+      console.log(a);
+      console.log(b);
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   </body>

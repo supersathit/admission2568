@@ -86,3 +86,25 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal Closed -->
+<div class="modal fade" id="ModalClose" aria-hidden="true" aria-labelledby="staticModalClose" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-danger">
+        <h1 class="modal-title fs-5 text-light" id="staticModalClose">การรับสมัครห้องเรียนพิเศษ</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+            - <span class="text-danger">ขณะนี้ เราได้ปิดการรับสมัครแล้ว</span><br>
+            - คนที่กรอกข้อมูลสมัครมาแล้ว ให้เข้าไปตรวจสอบผลการสมัคร<br>
+            - หากสถานะสุดท้ายยังขึ้น <span class="text-warning">รอตรวจเอกสาร</span> ให้ท่านโปรดรอและตรวจสอบอีกครั้งในวันถัดไป <br>
+            - หากเอกสารมีปัญหา จะมีเจ้าหน้าที่ติดต่อหาทันที <br>
+            - หากมีข้อสงสัยสามารถสอบถามได้ที่ 👉 <a href="https://page.line.me/145xeekj" class="btn btn-success"><i class="fa-regular fa-hand-pointer"></i> <i class="fa-brands fa-line"></i> WR-Admission2568</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
