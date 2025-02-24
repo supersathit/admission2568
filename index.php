@@ -63,7 +63,7 @@
         </div>
 
       </div>
-      <div class="row justify-content-center mb-2">
+      <div id="status" class="row justify-content-center mb-2">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
           <div class="card shadow rounded-4 p-3">
             <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร ม.1</h4>

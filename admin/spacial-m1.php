@@ -84,6 +84,7 @@
                 <hr class="mb-4">
                 <div class="p-1 mb-3">
                     <a href="sp_m1.php?total=total" class="btn btn-danger" target="_blank">กดเพื่อดูแยกรายการ</a>
+                    <a href="sp_m1_pass.php?total=total" class="btn btn-success" target="_blank">กดเพื่อดูแยกรายการที่คุณสมบัติผ่าน</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
