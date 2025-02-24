@@ -242,7 +242,7 @@
                     </div>
                     <div class="col-12 mb-3">
                         <div class="card rounded-3 p-2 shadow">
-                            <h4 class="text-center">จำนวนที่สมัครรายวัน ห้องเรียนพิเศษ ม.1</h4>
+                            <h4 class="text-center">จำนวนที่สมัครรายวัน ห้องเรียนพิเศษ ม.1 ที่ผ่านคุณสมบัติ</h4>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-striped">
                                     <thead class="text-center table-primary">
@@ -253,6 +253,7 @@
                                             <th colspan="3">17 ก.พ. 68</th>
                                             <th colspan="3">18 ก.พ. 68</th>
                                             <th colspan="3">19 ก.พ. 68</th>
+                                            <th rowspan="2">รวมทั้งหมด</th>
                                         </tr>
                                         <tr>
                                             <th>ในเขต</th>
@@ -276,17 +277,17 @@
                                     <?php
                                         function in($date1,$date2,$plan){
                                             include '../dblink.php';
-                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district = 'เมืองกำแพงเพชร' AND class1 = '$plan'"));
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district = 'เมืองกำแพงเพชร' AND class1 = '$plan' AND status = 'ผ่าน'"));
                                             return $value['COUNT(*)'];
                                         }
                                         function out($date1,$date2,$plan){
                                             include '../dblink.php';
-                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district != 'เมืองกำแพงเพชร' AND class1 = '$plan'"));
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district != 'เมืองกำแพงเพชร' AND class1 = '$plan' AND status = 'ผ่าน'"));
                                             return $value['COUNT(*)'];
                                         }
                                         function c($date1,$date2,$plan){
                                             include '../dblink.php';
-                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND class1 = '$plan'"));
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND class1 = '$plan' AND status = 'ผ่าน'"));
                                             return $value['COUNT(*)'];
                                         }
                                         
@@ -300,6 +301,16 @@
                                         $day4_2 = "2025-02-17 16:30:00";
                                         $day5_1 = "2025-02-19 16:30:00";
                                         $day5_2 = "2025-02-18 16:30:00";
+
+
+                                        function tt($plan){
+                                            include '../dblink.php';
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE  class1 = '$plan' AND status = 'ผ่าน'"));
+                                            return $value['COUNT(*)'];
+                                        }
+
+                                        $total_total_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE status = 'ผ่าน'"));
+                                        
                                         
                                     ?>
                                         
@@ -320,6 +331,7 @@
                                             <td><?=in($day5_1,$day5_2,"ep")?></td>
                                             <td><?=out($day5_1,$day5_2,"ep")?></td>
                                             <td><?=c($day5_1,$day5_2,"ep")?></td>
+                                            <td><?=tt("ep")?></td>
                                         </tr>
                                         <tr>
                                             <td>สสวท.</td>
@@ -338,6 +350,7 @@
                                             <td><?=in($day5_1,$day5_2,"สสวท")?></td>
                                             <td><?=out($day5_1,$day5_2,"สสวท")?></td>
                                             <td><?=c($day5_1,$day5_2,"สสวท")?></td>
+                                            <td><?=tt("สสวท")?></td>
                                         </tr>
                                         <tr>
                                             <td>E-SMAT</td>
@@ -356,6 +369,7 @@
                                             <td><?=in($day5_1,$day5_2,"esmat")?></td>
                                             <td><?=out($day5_1,$day5_2,"esmat")?></td>
                                             <td><?=c($day5_1,$day5_2,"esmat")?></td>
+                                            <td><?=tt("esmat")?></td>
                                         </tr>
                                         <tr class="fw-bold">
                                             <td>รวม(รายวัน)</td>
@@ -374,6 +388,7 @@
                                             <td></td>
                                             <td></td>
                                             <td><?=$c_M1_5?></td>
+                                            <td><?=$total_total_m1['COUNT(*)']?></td>
                                         </tr>
                                         
                                     </tbody>
