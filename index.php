@@ -30,31 +30,22 @@
         <p class="text-center text-danger">เพื่อความสะดวก ท่านสามารถติดต่อได้ทาง Line : <a href="https://page.line.me/145xeekj" class="btn btn-success"><i class="fa-regular fa-hand-pointer"></i> <i class="fa-brands fa-line"></i> WR-Admission2568</a></p>
       </div>
 
-      <div class="row justify-content-center mb-3">
+      <!-- <div class="row justify-content-center mb-3">
 
         <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
           <div class="card shadow rounded-4 p-2">
-            <!-- <div class="card-img1">
-              <img src="img/pre school.png" width="100%" style="transition: 0.4s;">
-            </div> -->
             <h4 class="fw-bold mt-2 text-center">ชั้นมัธยมศึกษาปีที่ 1</h4>
             <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
             <button type="button" class="btn btn-lg btn-success" data-bs-toggle="modal" id="openModalM1" data-bs-target="#staticBackdropM1">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1
             </button>
-            <!-- <a href="detail.php" class="btn btn-lg btn-success m-2"><i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 1</a> -->
           </div>
         </div>
 
         <div class="col-lg-3 col-md-6 col-sm-12 mb-3">
           <div class="card shadow rounded-4 p-2">
-            <!-- <div class="card-img1">
-              <img src="img/register.png" width="100%" style="transition: 0.4s;">
-            </div> -->
             <h4 class="fw-bold mt-2 text-center">ชั้นมัธยมศึกษาปีที่ 4</h4>
             <p class="text-center">ประเภท : ห้องเรียนพิเศษ</p>
-            <!-- <a href="" class="btn btn-warning m-2"><i class="fa-solid fa-address-card"></i> กรอกข้อมูลสมัคร</a> -->
-            <!-- Button trigger modal -->
             <button type="button" class="btn btn-lg btn-info" data-bs-toggle="modal" id="openModalM4" data-bs-target="#staticBackdropM4">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ต้องการสมัคร <br>ชั้นมัธยมศึกษาปีที่ 4
             </button>
@@ -62,13 +53,14 @@
           </div>
         </div>
 
-      </div>
+      </div> -->
+
       <div id="status" class="row justify-content-center mb-2">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
           <div class="card shadow rounded-4 p-3">
-            <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร ม.1</h4>
-            <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
-            <form action="status_m1.php" method="get" class="p-3 bg-light">
+            <h4 class="fw-bold text-center">ดูห้องสอบและเลขที่นั่งสอบ ม.1</h4>
+            <p class="fw-bold text-center">สามารถตรวจสอบห้องสอบและเลขที่นั่งสอบโดยการกรอกเลขประจำตัวประชาชน</p>
+            <form action="exam_id_m1.php" method="get" class="p-3 bg-light">
               <div class="input-group">
                 <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" OnKeyPress="return chkNumber(this)" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
@@ -80,9 +72,9 @@
       <div class="row justify-content-center mb-5">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">
           <div class="card shadow rounded-4 p-3">
-            <h4 class="fw-bold text-center">ตรวจสอบผลการสมัคร ม.4</h4>
-            <p class="fw-bold text-center">สามารถตรวจสอบผลการสมัครได้ทุกขั้นตอนโดยการกรอกเลขประจำตัวประชาชน</p>
-            <form action="status_m4.php" method="get" class="p-3 bg-light">
+            <h4 class="fw-bold text-center">ดูห้องสอบและเลขที่นั่งสอบ ม.4</h4>
+            <p class="fw-bold text-center">สามารถตรวจสอบห้องสอบและเลขที่นั่งสอบโดยการกรอกเลขประจำตัวประชาชน</p>
+            <form action="exam_id_m4.php" method="get" class="p-3 bg-light">
               <div class="input-group">
                 <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" OnKeyPress="return chkNumber(this)" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
