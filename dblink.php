@@ -1,6 +1,6 @@
 <?php 
 $conn = mysqli_connect("localhost","root","","admission") or die ("Error :".mysqli_connect_error($conn));
 mysqli_query($conn,"SET NAMES 'utf8'");
-error_reporting( error_reporting() & ~E_NOTICE );
-date_default_timezone_set('Asia/Bangkok');  
+// error_reporting( error_reporting() & ~E_NOTICE );
+date_default_timezone_set('Asia/Bangkok');
 ?>
