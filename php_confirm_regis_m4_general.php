@@ -78,36 +78,16 @@
     $sub_district = $sub_district_name['name_th'];
     
 
-    $sql_chk_id = "SELECT code_id FROM regis_m4 WHERE code_id = $code_id";
+    $sql_chk_id = "SELECT code_id FROM regis_m4_general WHERE code_id = $code_id";
     $result_chk_id = mysqli_query($conn,$sql_chk_id);
     $row_chk_id = mysqli_fetch_array($result_chk_id);
 
     if($row_chk_id == ''){
-        if(isset($_FILES['house_regis'])){
-            $house_tmp_name =  $_FILES['house_regis']['tmp_name'];
-            $grade1_tmp_name =  $_FILES['grade_file1']['tmp_name'];
-            $house_locate_img ="file/house/";
-            $grade1_locate_img ="file/grade1/";
-            $house_type = strrchr($_FILES['house_regis']['name'],".");
-            $grade1_type = strrchr($_FILES['grade_file1']['name'],".");
-            $house_name_file =  $code_id.$house_type;
-            $grade1_name_file =  $code_id.$grade1_type;
-            move_uploaded_file($house_tmp_name,$house_locate_img.$house_name_file);
-            move_uploaded_file($grade1_tmp_name,$grade1_locate_img.$grade1_name_file);
-        }
-        if(isset($_FILES['grade_file2'])){
-            $grade2_tmp_name =  $_FILES['grade_file2']['tmp_name'];
-            $grade2_locate_img ="file/grade2/";
-            $grade2_type = strrchr($_FILES['grade_file2']['name'],".");
-            if($grade2_tmp_name == ''){
-                $grade2_name_file = null;
-            }else{
-                $grade2_name_file =  $code_id.$grade2_type;
-            }
-            move_uploaded_file($grade2_tmp_name,$grade2_locate_img.$grade2_name_file);
-        }else{
-            $grade2_name_file = "";
-        }
+        $old = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM regis_m4 WHERE code_id = $code_id"));
+        $house_name_file =$old['house_regis'];
+        $grade1_name_file =$old['grade_file1'];
+        $grade2_name_file =$old['grade_file2'];
+
         if(isset($_FILES['special_file'])){
             $special_tmp_name =  $_FILES['special_file']['tmp_name'];
             $special_locate_img ="file/special/";

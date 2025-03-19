@@ -15,7 +15,7 @@
         echo "<script>alert('คุณกรอกเลขบัตรประชาชนไม่ครบ 13 หลัก')</script>";
         echo "<script>window.location.href='index.php'</script>";
     }else if($row != ''){
-        echo "<script>alert('คุณได้กรอกข้อมูลสมัครมาแล้วกรุณาไปตรวจผลการสมัคร')</script>";
+        echo "<script>alert('คุณได้กรอกข้อมูลสมัครมาแล้วกรุณาไปตรวจสอบสถานะการสมัคร')</script>";
         echo "<script>window.location.href='index.php'</script>";
     }
     mysqli_close($conn);

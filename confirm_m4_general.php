@@ -16,7 +16,7 @@
         echo "<script>alert('คุณกรอกเลขบัตรประชาชนไม่ครบ 13 หลัก')</script>";
         echo "<script>window.location.href='index.php'</script>";
     }else if($row1 != ''){
-        echo "<script>alert('คุณได้ทำการสมัครมากแล้ว')</script>";
+        echo "<script>alert('คุณได้ทำการสมัครมาแล้ว')</script>";
         echo "<script>window.location.href='index.php'</script>";
     }else if($row == ''){
         echo "<script>alert('ไม่พบข้อมูลในการสมัครห้องเรียนพิเศษ')</script>";
@@ -76,7 +76,7 @@
                         $val = mysqli_fetch_array($result);
                     ?>
 
-                    <form action="php_insert_regis_m1.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <form action="php_confirm_regis_m4_general.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
                     <strong>1. ประวัติส่วนตัว</strong>
                         <div class="row p-3">
@@ -139,7 +139,7 @@
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom01" class="form-label">หมู่เลือด</label>
                                 <select name="blood" id="validationCustom01" class="form-select" required>
-                                    <option  value="<?=$val['blood']?>" selected disabled><?=$val['blood']?></option>
+                                    <option value="<?=$val['blood']?>" selected><?=$val['blood']?></option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
                                     <option value="AB">AB</option>
@@ -350,7 +350,7 @@
                                     </div>
                                     <div class="col-12 mb-3">
                                         <label for="validationCustom01" class="form-label">ภาพเกียรติบัตรตามความสามารถด้านที่เลือก ที่ได้ในระดับเขตพื้นที่ขึ้นไป</label>
-                                        <input type="file" name="house_regis" id="" class="form-control" accept="image/*">
+                                        <input type="file" name="special_file" id="" class="form-control" accept="image/*">
                                         <span class="text-danger">***สำหรับคนที่เลือกแผนการเรียนศิลปกรรมศาสตร์ - การกีฬา***</span>
                                     </div>
                                 </div>

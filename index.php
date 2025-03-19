@@ -105,7 +105,7 @@
           <div class="card shadow rounded-4 p-3">
             <h4 class="fw-bold text-center">ตรวจสอบสถานะการสมัคร ม.1</h4>
             <p class="fw-bold text-center">สามารถตรวจสอบสถานะการสมัครห้องเรียนปกติโดยการกรอกเลขประจำตัวประชาชน</p>
-            <form action="exam_id_m1.php" method="get" class="p-3 bg-light">
+            <form action="status_m1_general.php" method="get" class="p-3 bg-light">
               <div class="input-group">
                 <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" OnKeyPress="return chkNumber(this)" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
@@ -119,7 +119,7 @@
           <div class="card shadow rounded-4 p-3">
             <h4 class="fw-bold text-center">ตรวจสอบสถานะการสมัคร ม.4</h4>
             <p class="fw-bold text-center">สามารถตรวจสอบสถานะการสมัครห้องเรียนปกติโดยการกรอกเลขประจำตัวประชาชน</p>
-            <form action="exam_id_m4.php" method="get" class="p-3 bg-light">
+            <form action="status_m4_general.php" method="get" class="p-3 bg-light">
               <div class="input-group">
                 <input type="text" name="code_id" class="form-control form-control-lg" placeholder="กรอกเลขบัตรประชาชนที่สมัครแล้ว" maxlength="13" OnKeyPress="return chkNumber(this)" aria-label="Example text with button addon" aria-describedby="button-addon1">
                 <button class="btn btn-warning" type="submit" id="button-addon1">ตรวจสอบ</button>
@@ -196,7 +196,7 @@
       <?php
         function date_time_m1($date1,$date2){
           include 'dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
           return $value['COUNT(*)'];
         }
         $dayM1_1 = date_time_m1("2025-03-20 16:30:00","2025-03-19 16:30:00");
@@ -207,7 +207,7 @@
         
         function date_time_m4($date1,$date2){
           include 'dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4_general WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
           return $value['COUNT(*)'];
         }
         $dayM4_1 = date_time_m4("2025-03-20 16:30:00","2025-03-19 16:30:00");
@@ -253,7 +253,7 @@
           },
           title: {
             display: true,
-            text: 'จำนวนนักเรียนที่สมัครห้องเรียนพิเศษ รายวัน'
+            text: 'จำนวนนักเรียนที่สมัครห้องเรียนปกติ รายวัน'
           }
         }
       },
@@ -278,7 +278,7 @@
       
       let a = new Date("2025-03-24T09:30:00Z")
       let b = new Date()
-      let c = new Date("2025-03-19T02:30:00Z")
+      let c = new Date("2025-03-20T02:30:00Z")
       if(b < c){
         myFunction3();
       }else if(b > a){

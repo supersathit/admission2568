@@ -15,7 +15,7 @@
         echo "<script>alert('คุณกรอกเลขบัตรประชาชนไม่ครบ 13 หลัก')</script>";
         echo "<script>window.location.href='index.php'</script>";
     }else if($row != ''){
-        echo "<script>alert('คุณได้กรอกข้อมูลสมัครมาแล้วกรุณาไปตรวจผลการสมัคร')</script>";
+        echo "<script>alert('คุณได้กรอกข้อมูลสมัครมาแล้วกรุณาไปตรวจสอบสถานะการสมัคร')</script>";
         echo "<script>window.location.href='index.php'</script>";
     }
     mysqli_close($conn);
@@ -65,7 +65,7 @@
                     <div class="text-danger mb-3">
                         <strong>คำชี้แจง: </strong>หากช่องไหนไม่มีข้อมูลให้ใส่เครื่องหมาย " - "
                     </div>
-                    <form action="php_insert_regis_m1.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <form action="php_insert_regis_m4_general.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
                     <strong>1. ประวัติส่วนตัว</strong>
                         <div class="row p-3">
@@ -264,7 +264,7 @@
                                     <option value="ศิลป์จีน">แผนการเรียนศิลป์ - ภาษาจีน จำนวน 18 คน</option>
                                     <option value="ศิลป์นิติ">แผนการเรียนศิลป์สังคม – นิติ - รัฐศาสตร์ จำนวน 2 คน</option>
                                     <option value="ศิลป์อังกฤษ">แผนการเรียนศิลป์ - ภาษาอังกฤษ จำนวน 1 คน</option>
-                                    <option value="ศิลปกรรมศาสตร์" onclick="if(this.selected){myFunction1()}">แผนการเรียนศิลปกรรมศาสตร์ - การกีฬา จำนวน 23 คน</option>
+                                    <option value="ศิลปกรรมศาสตร์">แผนการเรียนศิลปกรรมศาสตร์ - การกีฬา จำนวน 23 คน</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     *กรุณาเลือกแผนการเรียนลำดับที่ 1
@@ -332,20 +332,20 @@
                                 <span class="mb-2 d-block text-danger">**หากเลือกแผนการเรียนศิลปกรรมศาสตร์ - การกีฬา ไม่ว่าจะเลือกลำดับได้ก็ตาม ให้เลือกความถนัดด้านล่างนี้ แต่ถ้าไม่ได้เลือกแผนการเรียนศิลปกรรมศาสตร์ - การกีฬา ไม่ต้องทำในกรอบนี้**</span>
                                 <div class="ps-3" id="mmm">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="ด้านศิลปะ" id="invalidCheck3" name="s1">
+                                        <input class="form-check-input" type="radio" value="ด้านศิลปะ" id="invalidCheck3" name="sp1">
                                         <label class="form-check-label" for="invalidCheck3">ด้านศิลปะ</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" value="ด้านดนตรี" id="invalidCheck4" name="s1">
+                                        <input class="form-check-input" type="radio" value="ด้านดนตรี" id="invalidCheck4" name="sp1">
                                         <label class="form-check-label" for="invalidCheck4">ด้านดนตรี</label>
                                     </div>
                                     <div class="form-check mb-3">
-                                        <input class="form-check-input" type="radio" value="ด้านกีฬา" id="invalidCheck5" name="s1">
+                                        <input class="form-check-input" type="radio" value="ด้านกีฬา" id="invalidCheck5" name="sp1">
                                         <label class="form-check-label" for="invalidCheck5">ด้านกีฬา</label>
                                     </div>
                                     <div class="col-12 mb-3">
                                         <label for="validationCustom01" class="form-label">ภาพเกียรติบัตรตามความสามารถด้านที่เลือก ที่ได้ในระดับเขตพื้นที่ขึ้นไป</label>
-                                        <input type="file" name="house_regis" id="" class="form-control" accept="image/*">
+                                        <input type="file" name="special_file" id="" class="form-control" accept="image/*">
                                         <span class="text-danger">***สำหรับคนที่เลือกแผนการเรียนศิลปกรรมศาสตร์ - การกีฬา***</span>
                                     </div>
                                 </div>
