@@ -2,7 +2,7 @@
 
     include "dblink.php";
 
-    $code_id = $_POST['code_id'];
+    $code_id = $_GET['code_id'];
     if(!$code_id){
         header('location:index.php');
     }
@@ -10,9 +10,13 @@
     $sql = "SELECT code_id FROM regis_m1 WHERE code_id = $code_id";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
+    $row1 = mysqli_fetch_array(mysqli_query($conn,"SELECT code_id FROM regis_m1_general WHERE code_id = $code_id"));
 
     if(strlen($code_id) < 13){
         echo "<script>alert('คุณกรอกเลขบัตรประชาชนไม่ครบ 13 หลัก')</script>";
+        echo "<script>window.location.href='index.php'</script>";
+    }else if($row1 != ''){
+        echo "<script>alert('คุณได้ทำการสมัครมากแล้ว')</script>";
         echo "<script>window.location.href='index.php'</script>";
     }else if($row == ''){
         echo "<script>alert('ไม่พบข้อมูลในการสมัครห้องเรียนพิเศษ')</script>";
@@ -36,7 +40,7 @@
   <body class="body">
     <?php include('components/header.php'); ?>
     <div class="container">
-        <h2 class="text-secondary text-center mb-5">กรอกข้อมูลผู้สมัคร</h2>
+        <h2 class="text-secondary text-center mb-5">ยืนยันสิทธิ์สมัครห้องเรียนปกติ</h2>
 
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
@@ -53,76 +57,79 @@
                     
                     <hr>
                     <div class="text-danger mb-3">
-                        <strong>คำชี้แจง: </strong>หากช่องไหนไม่มีข้อมูลให้ใส่เครื่องหมาย " - "
+                        <strong>คำชี้แจง: </strong>โปรดตรวจสอบข้อมูลให้ครบถ้วน และให้กรอกจังหวัด อำเภอ ตำบล ใหม่
                     </div>
+
+                    <?php
+                        include "dblink.php";
+                        $sql = "SELECT * FROM regis_m1 WHERE code_id = $code_id";
+                        $result = mysqli_query($conn,$sql);
+                        $val = mysqli_fetch_array($result);
+                    ?>
                     <form action="php_insert_regis_m1.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
                         <strong>1. ประวัติส่วนตัว</strong>
                         <div class="row p-3">
                             <div class="col-12 mb-3">
                                 <label for="" class="form-label">เลขบัตรประจำตัวประชาชน</label>
-                                <input type="text" name="code_id" id="" class="form-control" placeholder="กรอกชื่อ" value="<?=$_POST['code_id']?>" readonly style="background-color:#CCFF99;">
+                                <input type="text" name="code_id" id="" class="form-control" placeholder="กรอกชื่อ" value="<?=$val['code_id']?>" readonly style="background-color:#CCFF99;">
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom01" class="form-label">คำนำหน้า</label>
-                                <select name="title" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือก--</option>
-                                    <option value="เด็กชาย">เด็กชาย</option>
-                                    <option value="เด็กหญิง">เด็กหญิง</option>
-                                </select>
+                                <input type="text" name="title" id="validationCustom02" class="form-control" placeholder="กรอกคำนำหน้า" value="<?=$val['title']?>" required>
                                 <div class="invalid-feedback">
                                     *กรุณาเลือกคำนำหน้า
                                 </div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom02" class="form-label">ชื่อ</label>
-                                <input type="text" name="name" id="validationCustom02" class="form-control" placeholder="กรอกชื่อ" value="" required>
+                                <input type="text" name="name" id="validationCustom02" class="form-control" placeholder="กรอกชื่อ" value="<?=$val['name']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกชื่อ</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-5">
                                 <label for="validationCustom03" class="form-label">นามสกุล</label>
-                                <input type="text" name="surname" id="validationCustom03" class="form-control" placeholder="กรอกนามสกุล" required>
+                                <input type="text" name="surname" id="validationCustom03" class="form-control" placeholder="กรอกนามสกุล" value="<?=$val['surname']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกนามสกุล</div>
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="validationCustom07" class="form-label">กำลังศึกษาอยู่ในระดับชั้นประถมศึกษาปีที่ 6 โรงเรียน</label>
-                                <input type="text" name="school_name" id="validationCustom07" class="form-control" placeholder="กรอกชื่อโรงเรียน" required>
+                                <input type="text" name="school_name" id="validationCustom07" class="form-control" placeholder="กรอกชื่อโรงเรียน" value="<?=$val['school_name']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกชื่อโรงเรียน</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom05" class="form-label">อำเภอ</label>
-                                <input type="text" name="school_district" id="validationCustom05" class="form-control" placeholder="กรอกอำเภอที่ตั้งโรงเรียน" required>
+                                <input type="text" name="school_district" id="validationCustom05" class="form-control" placeholder="กรอกอำเภอที่ตั้งโรงเรียน" value="<?=$val['school_district']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกอำเภอที่ตั้งโรงเรียน</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom06" class="form-label">จังหวัด</label>
-                                <input type="text" name="school_province" id="validationCustom06" class="form-control" placeholder="กรอกจังหวัดที่ตั้งโรงเรียน" required>
+                                <input type="text" name="school_province" id="validationCustom06" class="form-control" placeholder="กรอกจังหวัดที่ตั้งโรงเรียน" value="<?=$val['school_province']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกจังหวัดที่ตั้งโรงเรียน</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom06" class="form-label">ผลการเรียนเฉลี่ย ป.4 และ ป.5</label>
-                                <input type="text" name="grade" id="validationCustom06" class="form-control" placeholder="กรอกผลการเรียนเฉลี่ย ป.4 และ ป.5" required>
+                                <input type="text" name="grade" id="validationCustom06" class="form-control" placeholder="กรอกผลการเรียนเฉลี่ย ป.4 และ ป.5" value="<?=$val['grade']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกผลการเรียนเฉลี่ย</div>
                             </div>
                             <div class="col-12 mb-3">
                                 <label for="validationCustom06" class="form-label">ความสามารถพิเศษ</label>
-                                <input type="text" name="spacial" id="validationCustom06" class="form-control" placeholder="กรอกความสามารถพิเศษ" required>
+                                <input type="text" name="spacial" id="validationCustom06" class="form-control" placeholder="กรอกความสามารถพิเศษ" value="<?=$val['spacial']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกความสามารถพิเศษ</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-4">
                                 <label for="validationCustom04" class="form-label">วันเดือนปีเกิด ค.ศ.</label>
-                                <input type="date" name="bdate" id="validationCustom04" class="form-control" required>
+                                <input type="date" name="bdate" id="validationCustom04" class="form-control" value="<?=$val['bdate']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกวันเดือนปีเกิด</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-5">
                                 <label for="validationCustom06" class="form-label">สถานที่เกิด</label>
-                                <input type="text" name="station_bdate" id="validationCustom06" class="form-control" placeholder="กรอกสถานที่เกิด" required>
+                                <input type="text" name="station_bdate" id="validationCustom06" class="form-control" placeholder="กรอกสถานที่เกิด" value="<?=$val['station_bdate']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกสถานที่เกิด</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom01" class="form-label">หมู่เลือด</label>
                                 <select name="blood" id="validationCustom01" class="form-select" required>
-                                    <option value="" selected disabled>--เลือก--</option>
+                                    <option value="<?=$value['blood']?>" selected disabled><?=$val['blood']?></option>
                                     <option value="A">A</option>
                                     <option value="B">B</option>
                                     <option value="AB">AB</option>
@@ -134,22 +141,22 @@
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">บ้านเลขที่</label>
-                                <input type="text" name="home_id" id="validationCustom08" class="form-control" placeholder="กรอกบ้านเลขที่" required>
+                                <input type="text" name="home_id" id="validationCustom08" class="form-control" placeholder="กรอกบ้านเลขที่" value="<?=$val['home_id']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกบ้านเลขที่</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">หมู่</label>
-                                <input type="text" name="home_group" id="validationCustom08" class="form-control" placeholder="กรอกหมู่" required>
+                                <input type="text" name="home_group" id="validationCustom08" class="form-control" placeholder="กรอกหมู่" value="<?=$val['home_group']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกหมู่</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">ซอย</label>
-                                <input type="text" name="alley" id="validationCustom08" class="form-control" placeholder="กรอกซอย" required>
+                                <input type="text" name="alley" id="validationCustom08" class="form-control" placeholder="กรอกซอย" value="<?=$val['alley']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกซอย</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">ถนน</label>
-                                <input type="text" name="street" id="validationCustom08" class="form-control" placeholder="กรอกถนน" required>
+                                <input type="text" name="street" id="validationCustom08" class="form-control" placeholder="กรอกถนน" value="<?=$val['street']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกถนน</div>
                             </div>
                             <?php
@@ -190,7 +197,7 @@
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">เบอร์โทรศัพท์</label>
-                                <input type="text" name="tel" id="validationCustom08" class="form-control" maxlength="10" placeholder="กรอกเบอร์โทรศัพท์" required>
+                                <input type="text" name="tel" id="validationCustom08" class="form-control" maxlength="10" placeholder="กรอกเบอร์โทรศัพท์" value="<?=$val['tel']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกเบอร์โทรศัพท์</div>
                             </div>
                             
@@ -200,42 +207,42 @@
                             
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">ชื่อบิดา</label>
-                                <input type="text" name="father_name" id="validationCustom08" class="form-control" placeholder="กรอกชื่อบิดา" required>
+                                <input type="text" name="father_name" id="validationCustom08" class="form-control" placeholder="กรอกชื่อบิดา" value="<?=$val['father_name']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกชื่อบิดา</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">นามสกุลบิดา</label>
-                                <input type="text" name="father_surname" id="validationCustom08" class="form-control" placeholder="กรอกนามสกุลบิดา" required>
+                                <input type="text" name="father_surname" id="validationCustom08" class="form-control" placeholder="กรอกนามสกุลบิดา" value="<?=$val['father_surname']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกนามสกุลบิดา</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">อาชีพบิดา</label>
-                                <input type="text" name="father_occupation" id="validationCustom08" class="form-control" placeholder="กรอกอาชีพบิดา" required>
+                                <input type="text" name="father_occupation" id="validationCustom08" class="form-control" placeholder="กรอกอาชีพบิดา" value="<?=$val['father_occupation']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกอาชีพบิดา</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">เบอร์โทรบิดา</label>
-                                <input type="text" name="father_tel" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรบิดา" required>
+                                <input type="text" name="father_tel" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรบิดา" value="<?=$val['father_tel']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกเบอร์โทรบิดา</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">ชื่อมารดา</label>
-                                <input type="text" name="mother_name" id="validationCustom08" class="form-control" placeholder="กรอกชื่อมารดา" required>
+                                <input type="text" name="mother_name" id="validationCustom08" class="form-control" placeholder="กรอกชื่อมารดา" value="<?=$val['mother_name']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกชื่อมารดา</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">นามสกุลมารดา</label>
-                                <input type="text" name="mother_surname" id="validationCustom08" class="form-control" placeholder="กรอกนามสกุลมารดา" required>
+                                <input type="text" name="mother_surname" id="validationCustom08" class="form-control" placeholder="กรอกนามสกุลมารดา" value="<?=$val['mother_surname']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกนามสกุลมารดา</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">อาชีพมารดา</label>
-                                <input type="text" name="mother_occupation" id="validationCustom08" class="form-control" placeholder="กรอกอาชีพมารดา" required>
+                                <input type="text" name="mother_occupation" id="validationCustom08" class="form-control" placeholder="กรอกอาชีพมารดา" value="<?=$val['mother_occupation']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกอาชีพมารดา</div>
                             </div>
                             <div class="col-12 mb-3 col-lg-3">
                                 <label for="validationCustom08" class="form-label">เบอร์โทรมารดา</label>
-                                <input type="text" name="mother_tel" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรมารดา" required>
+                                <input type="text" name="mother_tel" id="validationCustom08" maxlength="10" class="form-control" placeholder="กรอกเบอร์โทรมารดา" value="<?=$val['mother_tel']?>" required>
                                 <div class="invalid-feedback">*กรุณากรอกเบอร์โทรมารดา</div>
                             </div>
                             

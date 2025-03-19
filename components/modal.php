@@ -57,7 +57,7 @@
                 <h1 class="modal-title fs-5" id="staticModalConfirmM4">ยืนยันสิทธิ์สมัครชั้นมัธยมศึกษาปีที่ 4</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="confirm_m4_general.php" method="post">
+            <form action="confirm_m4_general.php" method="get">
             <div class="modal-body">
                 <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
                 <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)" required>
@@ -123,7 +123,7 @@
                 <h1 class="modal-title fs-5" id="staticModalConfirmM1">ยืนยันสิทธิ์สมัครชั้นมัธยมศึกษาปีที่ 1</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="confirm_m1_general.php" method="post">
+            <form action="confirm_m1_general.php" method="get">
             <div class="modal-body">
                 <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
                 <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)" required>

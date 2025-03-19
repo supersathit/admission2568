@@ -55,7 +55,7 @@
                     <div class="text-danger mb-3">
                         <strong>คำชี้แจง: </strong>หากช่องไหนไม่มีข้อมูลให้ใส่เครื่องหมาย " - "
                     </div>
-                    <form action="php_insert_regis_m1.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <form action="php_insert_regis_m1_general.php" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
                         <strong>1. ประวัติส่วนตัว</strong>
                         <div class="row p-3">
@@ -274,7 +274,7 @@
                                     </div>
                                     <div class="col-12 mb-3">
                                         <label for="validationCustom01" class="form-label">ภาพเกียรติบัตรตามความสามารถพิเศษ ที่ได้ในระดับเขตพื้นที่ขึ้นไป</label>
-                                        <input type="file" name="house_regis" id="" class="form-control" accept="image/*">
+                                        <input type="file" name="special_file" id="" class="form-control" accept="image/*">
                                         <span class="text-danger">***สำหรับคนที่เลือกความสามารถพิเศษ***</span>
                                     </div>
                                 </div>
