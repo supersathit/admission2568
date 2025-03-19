@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 19, 2025 at 01:01 PM
+-- Generation Time: Mar 19, 2025 at 08:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `regis_m1`
+-- Table structure for table `regis_m1_general`
 --
 
 CREATE TABLE `regis_m1_general` (
@@ -57,31 +57,20 @@ CREATE TABLE `regis_m1_general` (
   `mother_surname` varchar(30) NOT NULL COMMENT 'นามสกุลมารดา',
   `mother_occupation` varchar(70) NOT NULL COMMENT 'อาชีพมารดา',
   `mother_tel` varchar(10) NOT NULL COMMENT 'เบอร์โทรมารดา',
-  `class1` varchar(10) NOT NULL COMMENT 'อันดับ1',
-  `class2` varchar(10) NOT NULL COMMENT 'อันดับ2',
-  `class3` varchar(10) NOT NULL COMMENT 'อันดับ3',
+  `class1` varchar(50) NOT NULL COMMENT 'แผนการเรียน',
   `date_regis` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `house_regis` varchar(30) NOT NULL,
   `grade_file1` varchar(30) NOT NULL,
   `grade_file2` varchar(30) DEFAULT NULL,
+  `special_file` varchar(20) DEFAULT NULL COMMENT 'เกียรติบัครความสา่มารถพิเศษ',
   `status` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'สถานะ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `regis_m1`
+-- Dumping data for table `regis_m1_general`
 --
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `regis_m1`
---
-ALTER TABLE `regis_m1_general`
-  ADD PRIMARY KEY (`code_id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
