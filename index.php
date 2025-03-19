@@ -84,7 +84,7 @@
           <div class="card shadow rounded-4 p-2">
             <h4 class="fw-bold mt-2 text-center">ยืนยันสิทธิ์<br>ชั้นมัธยมศึกษาปีที่ 1</h4>
             <p class="text-center">ประเภท : ห้องเรียนปกติ</p>
-            <button type="button" class="btn btn-lg btn-warning" data-bs-toggle="modal" id="openModalM1" data-bs-target="#ModalOpen">
+            <button type="button" class="btn btn-lg btn-warning" data-bs-toggle="modal" id="openModalM1" data-bs-target="#ModalConfirmM1">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ยืนยันสิทธิ์สำหรับคนที่เคยสมัครห้องเรียนพิเศษแล้ว<br>ชั้นมัธยมศึกษาปีที่ 1
             </button>
           </div>
@@ -93,7 +93,7 @@
           <div class="card shadow rounded-4 p-2">
             <h4 class="fw-bold mt-2 text-center">ยืนยันสิทธิ์<br>ชั้นมัธยมศึกษาปีที่ 4</h4>
             <p class="text-center">ประเภท : ห้องเรียนปกติ</p>
-            <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" id="openModalM4" data-bs-target="#ModalOpen">
+            <button type="button" class="btn btn-lg btn-primary" data-bs-toggle="modal" id="openModalM4" data-bs-target="#ModalConfirmM4">
               <i class="fa-solid fa-right-to-bracket fs-2"></i><br> ยืนยันสิทธิ์สำหรับคนที่เคยสมัครห้องเรียนพิเศษแล้ว<br>ชั้นมัธยมศึกษาปีที่ 4
             </button>
           </div>

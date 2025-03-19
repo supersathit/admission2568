@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2025 at 03:40 AM
+-- Generation Time: Mar 19, 2025 at 01:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -24,16 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `regis_m1`
+-- Table structure for table `regis_m4`
 --
 
-CREATE TABLE `regis_m4` (
-  `thai_id` varchar(13) NOT NULL COMMENT 'เลขบัตรประชาชน',
+CREATE TABLE `regis_m4_general` (
+  `code_id` varchar(13) NOT NULL COMMENT 'เลขบัตรประชาชน',
   `title` varchar(10) NOT NULL COMMENT 'คำนำหน้า',
   `name` varchar(50) NOT NULL COMMENT 'ชื่อ',
   `surname` varchar(70) NOT NULL COMMENT 'นามสกุล',
   `school_name` varchar(50) NOT NULL COMMENT 'โรงเรียน',
-  `school_distrit` varchar(50) NOT NULL COMMENT 'อำเภอ',
+  `school_district` varchar(50) NOT NULL COMMENT 'อำเภอ',
   `school_province` varchar(50) NOT NULL COMMENT 'จังหวัด',
   `grade` varchar(5) NOT NULL COMMENT 'ผลการเรียน',
   `spacial` varchar(70) NOT NULL COMMENT 'ความสามารถพิเศษ',
@@ -61,18 +61,23 @@ CREATE TABLE `regis_m4` (
   `date_update` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `house_regis` varchar(30) NOT NULL,
   `grade_file1` varchar(30) NOT NULL,
-  `grade_file2` varchar(30) DEFAULT NULL
+  `grade_file2` varchar(30) DEFAULT NULL,
+  `status` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'สถานะ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `regis_m4`
+--
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `regis_m1`
+-- Indexes for table `regis_m4`
 --
-ALTER TABLE `regis_m4`
-  ADD PRIMARY KEY (`thai_id`);
+ALTER TABLE `regis_m4_general`
+  ADD PRIMARY KEY (`code_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

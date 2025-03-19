@@ -8,7 +8,14 @@
       </div>
       <div class="modal-body">
         <p>
-            กรุณาเตรียมข้อมูลให้พร้อมในการกรอกข้อมูล <br>
+          <strong>แผนการเรียนที่เปิดรับนักเรียน</strong> <br>
+            1. แผนการเรียนศิลป์ - คำนวณ จำนวน 9 คน <br>
+            2. แผนการเรียนศิลป์ - ภาษาจีน	จำนวน 18 คน <br>
+            3. แผนการเรียนศิลป์สังคม – นิติ - รัฐศาสตร์	จำนวน 2 คน<br>
+            4. แผนการเรียนศิลป์ - ภาษาอังกฤษ จำนวน 1 คน<br>
+            5. แผนการเรียนศิลปกรรมศาสตร์ - การกีฬา จำนวน 23 คน<br><br>
+
+            <strong>กรุณาเตรียมข้อมูลให้พร้อมในการกรอกข้อมูล</strong> <br>
             <strong>เอกสารที่ต้องเตรียมเพื่ออัปโหลด</strong><br>
             1. เอกสารแสดงผลการเรียน 5 ภาคเรียน <br>
             2. สำเนาทะเบียนบ้านนักเรียน <br>
@@ -31,6 +38,26 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="regis_m4_general.php" method="post">
+            <div class="modal-body">
+                <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
+                <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)" required>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">ตกลง</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal Confirm check m4-->
+<div class="modal fade" id="ModalConfirmM4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticModalConfirmM4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h1 class="modal-title fs-5" id="staticModalConfirmM4">ยืนยันสิทธิ์สมัครชั้นมัธยมศึกษาปีที่ 4</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="confirm_m4_general.php" method="post">
             <div class="modal-body">
                 <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
                 <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)" required>
@@ -77,6 +104,26 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="regis_m1_general.php" method="post">
+            <div class="modal-body">
+                <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
+                <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)" required>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">ตกลง</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal Confirm check m1-->
+<div class="modal fade" id="ModalConfirmM1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticModalConfirmM1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h1 class="modal-title fs-5" id="staticModalConfirmM1">ยืนยันสิทธิ์สมัครชั้นมัธยมศึกษาปีที่ 1</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="confirm_m1_general.php" method="post">
             <div class="modal-body">
                 <p class="text-danger">ตรวจสอบเลขบัตรประจำตัวประชาชน</p>
                 <input type="text" name="code_id" id="" maxlength="13" class="form-control" placeholder="กรอกเลขบัตรประชาชน 13 หลัก" OnKeyPress="return chkNumber(this)" required>
