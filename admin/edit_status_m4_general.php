@@ -12,7 +12,7 @@
     $query = mysqli_query($conn,"UPDATE regis_m4_general SET `status` = '$status' WHERE code_id = '$code_id'");
     if($query){
         echo "<script>alert('เปลี่ยนเรียบร้อย')</script>";
-        echo "<script>window.location.href='spacial-m4.php'</script>";
+        echo "<script>window.location.href='general-m4.php'</script>";
     }else{
         echo "<script>alert('เปลี่ยนไม่ได้')</script>";
         

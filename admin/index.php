@@ -132,6 +132,7 @@
                     </div>
                     <div class="col-lg-6 col-12 mb-4">
                         <div class="card rounded-3 p-2 shadow">
+                            <h4 class="text-center">สรุปยอดรายวัน</h4>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover table-striped">
                                     <thead class="text-center table-primary">
@@ -151,80 +152,80 @@
                                     <?php
                                         function in_m1($date1,$date2){
                                             include '../dblink.php';
-                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district = 'เมืองกำแพงเพชร'"));
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district = 'เมืองกำแพงเพชร'"));
                                             return $value['COUNT(*)'];
                                         }
                                         function out_m1($date1,$date2){
                                             include '../dblink.php';
-                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district != 'เมืองกำแพงเพชร'"));
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general WHERE date_regis <= '$date1' AND date_regis > '$date2' AND district != 'เมืองกำแพงเพชร'"));
                                             return $value['COUNT(*)'];
                                         }
                                         function c_m1($date1,$date2){
                                             include '../dblink.php';
-                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
                                             return $value['COUNT(*)'];
                                         }
-                                        $total_in_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE district = 'เมืองกำแพงเพชร'"));
-                                        $total_out_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE district != 'เมืองกำแพงเพชร'"));
-                                        $total = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 "));
-                                        $total_m4 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 "));
-                                        $c_M1_1 = c_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
-                                        $c_M1_2 = c_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
-                                        $c_M1_3 = c_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
-                                        $c_M1_4 = c_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
-                                        $c_M1_5 = c_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
-                                        $in_M1_1 = in_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
-                                        $in_M1_2 = in_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
-                                        $in_M1_3 = in_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
-                                        $in_M1_4 = in_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
-                                        $in_M1_5 = in_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
-                                        $out_M1_1 = out_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
-                                        $out_M1_2 = out_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
-                                        $out_M1_3 = out_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
-                                        $out_M1_4 = out_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
-                                        $out_M1_5 = out_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
+                                        $total_in_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general WHERE district = 'เมืองกำแพงเพชร'"));
+                                        $total_out_m1 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general WHERE district != 'เมืองกำแพงเพชร'"));
+                                        $total = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general "));
+                                        $total_m4 = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4_general "));
+                                        $c_M1_1 = c_m1("2025-03-20 16:30:00","2025-03-19 16:30:00");
+                                        $c_M1_2 = c_m1("2025-03-21 16:30:00","2025-03-20 16:30:00");
+                                        $c_M1_3 = c_m1("2025-03-22 16:30:00","2025-03-21 16:30:00");
+                                        $c_M1_4 = c_m1("2025-03-23 16:30:00","2025-03-22 16:30:00");
+                                        $c_M1_5 = c_m1("2025-03-24 16:30:00","2025-03-23 16:30:00");
+                                        $in_M1_1 = in_m1("2025-03-20 16:30:00","2025-03-19 16:30:00");
+                                        $in_M1_2 = in_m1("2025-03-21 16:30:00","2025-03-20 16:30:00");
+                                        $in_M1_3 = in_m1("2025-03-22 16:30:00","2025-03-21 16:30:00");
+                                        $in_M1_4 = in_m1("2025-03-23 16:30:00","2025-03-22 16:30:00");
+                                        $in_M1_5 = in_m1("2025-03-24 16:30:00","2025-03-23 16:30:00");
+                                        $out_M1_1 = out_m1("2025-03-20 16:30:00","2025-03-19 16:30:00");
+                                        $out_M1_2 = out_m1("2025-03-21 16:30:00","2025-03-20 16:30:00");
+                                        $out_M1_3 = out_m1("2025-03-22 16:30:00","2025-03-21 16:30:00");
+                                        $out_M1_4 = out_m1("2025-03-23 16:30:00","2025-03-22 16:30:00");
+                                        $out_M1_5 = out_m1("2025-03-24 16:30:00","2025-03-23 16:30:00");
                                         
                                         function m4($date1,$date2){
                                             include '../dblink.php';
-                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+                                            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4_general WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
                                             return $value['COUNT(*)'];
                                         }
-                                        $M4_1 = m4("2025-02-15 16:30:00","2025-02-13 16:30:00");
-                                        $M4_2 = m4("2025-02-16 16:30:00","2025-02-15 16:30:00");
-                                        $M4_3 = m4("2025-02-17 16:30:00","2025-02-16 16:30:00");
-                                        $M4_4 = m4("2025-02-18 16:30:00","2025-02-17 16:30:00");
-                                        $M4_5 = m4("2025-02-19 16:30:00","2025-02-18 16:30:00");
+                                        $M4_1 = m4("2025-03-20 16:30:00","2025-03-19 16:30:00");
+                                        $M4_2 = m4("2025-03-21 16:30:00","2025-03-20 16:30:00");
+                                        $M4_3 = m4("2025-03-22 16:30:00","2025-03-21 16:30:00");
+                                        $M4_4 = m4("2025-03-23 16:30:00","2025-03-22 16:30:00");
+                                        $M4_5 = m4("2025-03-24 16:30:00","2025-03-23 16:30:00");
                                     ?>
                                         <tr>
-                                            <td>15 ก.พ. 68</td>
+                                            <td>20 มี.ค. 68</td>
                                             <td><?=$in_M1_1?></td>
                                             <td><?=$out_M1_1?></td>
                                             <td><?=$c_M1_1?></td>
                                             <td><?=$M4_1?></td>
                                         </tr>
                                         <tr>
-                                            <td>16 ก.พ. 68</td>
+                                            <td>21 มี.ค. 68</td>
                                             <td><?=$in_M1_2?></td>
                                             <td><?=$out_M1_2?></td>
                                             <td><?=$c_M1_2?></td>
                                             <td><?=$M4_2?></td>
                                         </tr>
                                         <tr>
-                                            <td>17 ก.พ. 68</td>
+                                            <td>22 มี.ค. 68</td>
                                             <td><?=$in_M1_3?></td>
                                             <td><?=$out_M1_3?></td>
                                             <td><?=$c_M1_3?></td>
                                             <td><?=$M4_3?></td>
                                         </tr>
                                         <tr>
-                                            <td>18 ก.พ. 68</td>
+                                            <td>23 มี.ค. 68</td>
                                             <td><?=$in_M1_4?></td>
                                             <td><?=$out_M1_4?></td>
                                             <td><?=$c_M1_4?></td>
                                             <td><?=$M4_4?></td>
                                         </tr>
                                         <tr>
-                                            <td>19 ก.พ. 68</td>
+                                            <td>24 มี.ค. 68</td>
                                             <td><?=$in_M1_5?></td>
                                             <td><?=$out_M1_5?></td>
                                             <td><?=$c_M1_5?></td>
@@ -399,6 +400,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -419,26 +421,26 @@
     </script>
     <?php
         function date_time_m1($date1,$date2){
-          include '../dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
-          return $value['COUNT(*)'];
-        }
-        $dayM1_1 = date_time_m1("2025-02-15 16:30:00","2025-02-13 16:30:00");
-        $dayM1_2 = date_time_m1("2025-02-16 16:30:00","2025-02-15 16:30:00");
-        $dayM1_3 = date_time_m1("2025-02-17 16:30:00","2025-02-16 16:30:00");
-        $dayM1_4 = date_time_m1("2025-02-18 16:30:00","2025-02-17 16:30:00");
-        $dayM1_5 = date_time_m1("2025-02-19 16:30:00","2025-02-18 16:30:00");
-        
-        function date_time_m4($date1,$date2){
-          include '../dblink.php';
-          $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4 WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
-          return $value['COUNT(*)'];
-        }
-        $dayM4_1 = date_time_m4("2025-02-15 16:30:00","2025-02-13 16:30:00");
-        $dayM4_2 = date_time_m4("2025-02-16 16:30:00","2025-02-15 16:30:00");
-        $dayM4_3 = date_time_m4("2025-02-17 16:30:00","2025-02-16 16:30:00");
-        $dayM4_4 = date_time_m4("2025-02-18 16:30:00","2025-02-17 16:30:00");
-        $dayM4_5 = date_time_m4("2025-02-19 16:30:00","2025-02-18 16:30:00");
+            include '../dblink.php';
+            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m1_general WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+            return $value['COUNT(*)'];
+          }
+          $dayM1_1 = date_time_m1("2025-03-20 16:30:00","2025-03-19 16:30:00");
+          $dayM1_2 = date_time_m1("2025-03-21 16:30:00","2025-03-20 16:30:00");
+          $dayM1_3 = date_time_m1("2025-03-22 16:30:00","2025-03-21 16:30:00");
+          $dayM1_4 = date_time_m1("2025-03-23 16:30:00","2025-03-22 16:30:00");
+          $dayM1_5 = date_time_m1("2025-03-24 16:30:00","2025-03-23 16:30:00");
+          
+          function date_time_m4($date1,$date2){
+            include '../dblink.php';
+            $value = mysqli_fetch_array(mysqli_query($conn,"SELECT COUNT(*) FROM regis_m4_general WHERE date_regis <= '$date1' AND date_regis > '$date2' "));
+            return $value['COUNT(*)'];
+          }
+          $dayM4_1 = date_time_m4("2025-03-20 16:30:00","2025-03-19 16:30:00");
+          $dayM4_2 = date_time_m4("2025-03-21 16:30:00","2025-03-20 16:30:00");
+          $dayM4_3 = date_time_m4("2025-03-22 16:30:00","2025-03-21 16:30:00");
+          $dayM4_4 = date_time_m4("2025-03-23 16:30:00","2025-03-22 16:30:00");
+          $dayM4_5 = date_time_m4("2025-03-24 16:30:00","2025-03-23 16:30:00");
       ?>
 
     <script type="text/javascript">
@@ -449,20 +451,20 @@
         type: 'bar',
         data: {
           labels: [
-            '15 ก.พ. 68', 
-            '16 ก.พ. 68', 
-            '17 ก.พ. 68', 
-            '18 ก.พ. 68', 
-            '19 ก.พ. 68'
+            '20 มี.ค. 68', 
+            '21 มี.ค. 68', 
+            '22 มี.ค. 68', 
+            '23 มี.ค. 68', 
+            '24 มี.ค. 68'
           ],
           datasets: [{
-            label: 'ห้องเรียนพิเศษ ม.1',
+            label: 'ห้องเรียนปกติ ม.1',
             data: [<?=$dayM1_1?>, <?=$dayM1_2?>, <?=$dayM1_3?>, <?=$dayM1_4?>, <?=$dayM1_5?>],
             borderWidth: 1,
             borderColor: 'rgb(235, 54, 196)',
             backgroundColor: 'rgba(235, 54, 160, 0.2)'
           },{
-            label: 'ห้องเรียนพิเศษ ม.4',
+            label: 'ห้องเรียนปกติ ม.4',
             data : [<?=$dayM4_1?>, <?=$dayM4_2?>, <?=$dayM4_3?>, <?=$dayM4_4?>, <?=$dayM4_5?>],
             borderWidth: 1,
             borderColor: 'rgb(54, 162, 235)',
@@ -477,7 +479,7 @@
           },
           title: {
             display: true,
-            text: 'จำนวนนักเรียนที่สมัครห้องเรียนพิเศษ รายวัน'
+            text: 'จำนวนนักเรียนที่สมัครห้องเรียนปกติ รายวัน'
           }
         }
       },
