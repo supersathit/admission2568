@@ -30,6 +30,8 @@
                 <a href="index.php"><i class="fa-solid fa-chart-simple"></i> Dashbord</a>
                 <a href="spacial-m1.php" class="active"><i class="fa-solid fa-flask"></i> พิเศษ ม.1</a>
                 <a href="spacial-m4.php"><i class="fa-solid fa-flask-vial"></i> พิเศษ ม.4</a>
+                <a href="general-m1.php"><i class="fa-solid fa-circle-user"></i> ปกติ ม.1</a>
+                <a href="general-m4.php"><i class="fa-solid fa-circle-user"></i> ปกติ ม.4</a>
             </div>
         </div>
         <div class="content-right">

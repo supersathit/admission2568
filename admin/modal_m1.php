@@ -41,6 +41,20 @@
     </div>
   </div>
 </div>
+<!-- Modal special M1-->
+<div class="modal fade" id="ModalSpecial<?=$value['code_id']?>" tabindex="-1" aria-labelledby="exampleModalModalSpecial<?=$value['code_id']?>" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalModalSpecial<?=$value['code_id']?>">เกียรติบัตรแสดงความสามารถพิเศษ ของ <span class="text-primary"><?=$value['title'].$value['name'].' '.$value['surname']?></span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="../file/special/<?=$value['special_file']?>" width="100%">
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal EditStatus M1-->
 <div class="modal fade" id="ModalEditStatus<?=$value['code_id']?>" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
@@ -63,6 +77,43 @@
             <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2" value="ไม่ผ่าน">
             <label class="form-check-label" for="flexRadioDefault2">
               ไม่ผ่าน
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="status" id="flexRadioDefault3" value="รอตรวจสอบเอกสาร">
+            <label class="form-check-label" for="flexRadioDefault3">
+              รอตรวจ
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="submit" class="btn btn-primary">ยืนยัน</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal EditStatus general M1-->
+<div class="modal fade" id="ModalEditStatusGn<?=$value['code_id']?>" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h1 class="modal-title fs-5" id="exampleModal">เปลี่ยนสถานะการสมัครของ <span class="text-success"><?=$value['title'].$value['name'].' '.$value['surname']?></span></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="edit_status_m1_general.php" method="post">
+        <div class="modal-body">
+          <input type="text" name="code_id" value="<?=$value['code_id']?>" style="display: none;">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" value="การสมัครเสร็จสิ้น">
+            <label class="form-check-label" for="flexRadioDefault1">
+              เสร็จสิ้น
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="status" id="flexRadioDefault2" value="ปกติ">
+            <label class="form-check-label" for="flexRadioDefault2">
+              เปลี่ยนเป็นห้องปกติ
             </label>
           </div>
           <div class="form-check">

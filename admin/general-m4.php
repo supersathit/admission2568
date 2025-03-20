@@ -29,9 +29,9 @@
             <div class="left-nav p-2">
                 <a href="index.php"><i class="fa-solid fa-chart-simple"></i> Dashbord</a>
                 <a href="spacial-m1.php"><i class="fa-solid fa-flask"></i> พิเศษ ม.1</a>
-                <a href="spacial-m4.php" class="active"><i class="fa-solid fa-flask-vial"></i> พิเศษ ม.4</a>
+                <a href="spacial-m4.php"><i class="fa-solid fa-flask-vial"></i> พิเศษ ม.4</a>
                 <a href="general-m1.php"><i class="fa-solid fa-circle-user"></i> ปกติ ม.1</a>
-                <a href="general-m4.php"><i class="fa-solid fa-circle-user"></i> ปกติ ม.4</a>
+                <a href="general-m4.php" class="active"><i class="fa-solid fa-circle-user"></i> ปกติ ม.4</a>
             </div>
         </div>
         <div class="content-right">
@@ -82,7 +82,7 @@
             </nav>
 
             <div class="container-fuid p-4">
-                <h3 class="text-secondary"><i class="fa-solid fa-flask"></i> ห้องเรียนพิเศษ ม.4</h3>
+                <h3 class="text-secondary"><i class="fa-solid fa-circle-user"></i> ห้องเรียนปกติ ม.4</h3>
                 <hr class="mb-4">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
@@ -95,7 +95,13 @@
                                 <th>เกตดเฉลี่ย</th>
                                 <th>เบอร์โทร</th>
                                 <th>วันที่สมัคร</th>
+                                <th>อันดับ1</th>
+                                <th>อันดับ2</th>
+                                <th>อันดับ3</th>
+                                <th>อันดับ4</th>
+                                <th>อันดับ5</th>
                                 <th>เอกสารแนบ</th>
+                                <th>เกียรติบัตร</th>
                                 <th>สถานะ</th>
                                 <th>Action</th>
                             </tr>
@@ -103,7 +109,7 @@
                         <tbody class="text-center">
                             <?php
                                 include '../dblink.php';
-                                $result = mysqli_query($conn,"SELECT * FROM regis_m4 ORDER BY date_regis");
+                                $result = mysqli_query($conn,"SELECT * FROM regis_m4_general ORDER BY date_regis");
                                 $n = 1;
                                 foreach ($result as $value) {
                             ?>
@@ -115,19 +121,27 @@
                                 <td><?=$value['grade']?></td>
                                 <td><?=$value['tel']?></td>
                                 <td><?=$value['date_regis']?></td>
+                                <td><?=$value['class1']?></td>
+                                <td><?=$value['class2']?></td>
+                                <td><?=$value['class3']?></td>
+                                <td><?=$value['class4']?></td>
+                                <td><?=$value['class5']?></td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#ModalHome<?=$value['code_id']?>"><i class="fa-solid fa-house-user"></i></button>
                                     <button type="button" class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#ModalGrade1<?=$value['code_id']?>"><i class="fa-solid fa-file-lines"></i>1</button>
                                     <?php echo $value['grade_file2'] == '' ? "" : '<button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#ModalGrade2'.$value['code_id'].'"><i class="fa-solid fa-file-lines"></i>2</button>'; ?>
                                 </td>
                                 <td>
-                                    <?php if($value['status'] == "ไม่ผ่าน"){echo "<span class='text-danger'><i class='fa-solid fa-circle-exclamation'></i> ไม่ผ่าน</span>";}else if($value['status'] == "ผ่าน"){echo '<span class="text-success"><i class="fa-solid fa-circle-check"></i> ผ่าน</span>';}else{echo '<span class="text-warning"><i class="fa-solid fa-hourglass-half"></i> รอตรวจ</span>';} ?>
-                                    <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalEditStatus<?=$value['code_id']?>"><i class="fa-solid fa-gear"></i></button>
+                                    <?php echo $value['special_file'] == '' ? "" : '<button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#ModalSpecial'.$value['code_id'].'"><i class="fa-solid fa-certificate"></i></button>'; ?>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-info"><i class="fa-solid fa-eye"></i></button>
+                                    <?php if($value['status'] == "ไม่ผ่าน"){echo "<span class='text-danger'><i class='fa-solid fa-circle-exclamation'></i> ไม่ผ่าน</span>";}else if($value['status'] == "ผ่าน"){echo '<span class="text-success"><i class="fa-solid fa-circle-check"></i> ผ่าน</span>';}else{echo '<span class="text-warning"><i class="fa-solid fa-hourglass-half"></i> รอตรวจ</span>';} ?>
+                                    <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalEditStatusGn<?=$value['code_id']?>"><i class="fa-solid fa-gear"></i></button>
+                                </td>
+                                <td>
+                                    <!-- <button type="button" class="btn btn-sm btn-info"><i class="fa-solid fa-eye"></i></button>
                                     <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit<?=$value['code_id']?>"><i class="fa-solid fa-user-pen"></i></button>
-                                    <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button> -->
                                 </td>
                             </tr>
                             <?php include 'modal_m4.php'; ?>

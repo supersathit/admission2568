@@ -82,7 +82,7 @@
                                         <tr>
                                             <td>3</td>
                                             <td>ความถูกต้องของเอกสาร</td>
-                                            <td><?php if($row['status'] == "การสมัครเสร็จสิ้น"){echo "<span class='text-success'><i class='fa-solid fa-circle-check'></i> การสมัครเสร็จสิ้น</span>";}else{echo '<span class="text-warning"><i class="fa-solid fa-hourglass-half"></i> รอตรวจสอบเอกสาร</span>';} ?></td>
+                                            <td><?php if($row['status'] == "ไม่ผ่าน"){echo "<span class='text-danger'><i class='fa-solid fa-circle-exclamation'></i> ไม่ผ่าน</span>";}else if($row['status'] == "ผ่าน"){echo '<span class="text-success"><i class="fa-solid fa-circle-check"></i> การสมัครเสร็จสิ้น</span>';}else{echo '<span class="text-warning"><i class="fa-solid fa-hourglass-half"></i> รอตรวจสอบเอกสาร</span>';} ?></td>
                                         </tr>
                                     </tbody>
                                 </table>

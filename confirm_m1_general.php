@@ -7,7 +7,7 @@
         header('location:index.php');
     }
 
-    $sql = "SELECT code_id FROM regis_m1 WHERE code_id = $code_id";
+    $sql = "SELECT code_id FROM regis_m1 WHERE code_id = '$code_id'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
     $row1 = mysqli_fetch_array(mysqli_query($conn,"SELECT code_id FROM regis_m1_general WHERE code_id = $code_id"));

@@ -278,7 +278,7 @@
       
       let a = new Date("2025-03-24T09:30:00Z")
       let b = new Date()
-      let c = new Date("2025-03-20T02:30:00Z")
+      let c = new Date("2025-03-19T02:30:00Z")
       if(b < c){
         myFunction3();
       }else if(b > a){
