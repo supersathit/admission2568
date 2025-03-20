@@ -78,7 +78,7 @@
     $sub_district = $sub_district_name['name_th'];
     
 
-    $sql_chk_id = "SELECT code_id FROM regis_m4 WHERE code_id = $code_id";
+    $sql_chk_id = "SELECT code_id FROM regis_m4_general WHERE code_id = $code_id";
     $result_chk_id = mysqli_query($conn,$sql_chk_id);
     $row_chk_id = mysqli_fetch_array($result_chk_id);
 
