@@ -79,7 +79,7 @@
         </div>
       </div>
 
-      <div class="row justify-content-center mb-3">
+      <!-- <div class="row justify-content-center mb-3">
         <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
           <div class="card shadow rounded-4 p-2">
             <h4 class="fw-bold mt-2 text-center">ยืนยันสิทธิ์<br>ชั้นมัธยมศึกษาปีที่ 1</h4>
@@ -98,7 +98,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div id="status" class="row justify-content-center mb-2">
         <div class="col-lg-8 col-md-12 col-sm-12 col-12 mb-3">

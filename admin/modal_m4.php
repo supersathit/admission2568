@@ -139,7 +139,7 @@
         <h1 class="modal-title fs-5" id="exampleModalEdit<?=$value['code_id']?>">แก้ไขข้อมูลของ <span class="text-danger"><?=$value['title'].$value['name'].' '.$value['surname']?></span></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form action="php_edit_m4.php" method="post">
+      <form action="php_edit_m4_general.php" method="post">
         <div class="modal-body">
           <strong>1. ประวัติส่วนตัว</strong>
             <div class="row p-3">

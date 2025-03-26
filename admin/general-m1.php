@@ -135,9 +135,9 @@
                                     <button type="button" class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#ModalEditStatusGn<?=$value['code_id']?>"><i class="fa-solid fa-gear"></i></button>
                                 </td>
                                 <td>
-                                    <!-- <button type="button" class="btn btn-sm btn-info"><i class="fa-solid fa-eye"></i></button>
+                                    <!-- <button type="button" class="btn btn-sm btn-info"><i class="fa-solid fa-eye"></i></button> -->
                                     <button type="button" class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#ModalEdit<?=$value['code_id']?>"><i class="fa-solid fa-user-pen"></i></button>
-                                    <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button> -->
+                                    <!-- <button type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash-can"></i></button> -->
                                 </td>
                             </tr>
                             <?php include 'modal_m1.php'; ?>
