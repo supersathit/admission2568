@@ -250,7 +250,7 @@
                                         ห้องเรียนปกติ
                                     </label>
                                 </div>
-                                <div class="form-check">
+                                <!-- <div class="form-check">
                                     <input class="form-check-input" type="radio" value="ความสามารถพิเศษ" id="invalidCheck2" name="plan" onclick="if(this.checked){myFunction2()}" required>
                                     <label class="form-check-label" for="invalidCheck2">
                                         ห้องเรียนปกติ (ความสามารถพิเศษ)
@@ -277,7 +277,7 @@
                                         <input type="file" name="special_file" id="" class="form-control" accept="image/*">
                                         <span class="text-danger">***สำหรับคนที่เลือกความสามารถพิเศษ***</span>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             
 
